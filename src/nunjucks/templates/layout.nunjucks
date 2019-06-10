@@ -1,0 +1,12 @@
+{# ===------ Layout ------=== #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.nunjucks" %}
+</head>
+<body>
+  <div class="wrapper">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

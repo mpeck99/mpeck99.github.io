@@ -1,0 +1,11 @@
+config.codekit
+.DS_Store
+.sass-cache
+node_modules
+npm-debug.log
+src/bower_components/
+bower_components/
+*.sublime-project
+*.sublime-workspace
+.wakatime-project
+build

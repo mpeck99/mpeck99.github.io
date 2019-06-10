@@ -1,0 +1,43 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "my personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "installDev": "npm i bootstrap popper.js jquery --save && npm i gulp node-sass del gulp-nunjucks-render -D && npm i browser-sync gulp-rename gulp-sourcemaps -D && npm i replace-in-file run-sequence gulp-watch pump -D && npm i @babel/core gulp-babel @babel/preset-env gulp-exec -D && npm i gulp-uglify gulp-concat gulp-svgmin -D && npm i gulp-autoprefixer gulp-sass -D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mlpeck99@bitbucket.org/mlpeck99/portfolio.git"
+  },
+  "author": "Morgan Peck",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/mlpeck99/portfolio#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "browser-sync": "^2.26.7",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-exec": "^3.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.12.0",
+    "pump": "^3.0.0",
+    "replace-in-file": "^4.1.0",
+    "run-sequence": "^2.2.1"
+  }
+}
