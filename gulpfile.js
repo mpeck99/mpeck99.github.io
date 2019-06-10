@@ -22,10 +22,10 @@ const gulp = require('gulp'),
 // ----------------------------
 gulp.task('default', ['serve']);
 
-
-// Build All
+// ----------------------------
+// Build Tasks
+// ----------------------------
 gulp.task('build', ['nunjucks']);
-
 
 // ----------------------------
 // HTML Tasks
@@ -46,6 +46,10 @@ gulp.task('nunjucks', cb => {
   );
 });
 
+gulp.task('htmlReload', ['nunjucks'], () => {
+  return browserSync.reload();
+})
+
 // ----------------------------
 // Browsersync
 // ----------------------------
@@ -58,5 +62,5 @@ gulp.task('serve', function () {
     notify: false
   });
 
-  gulp.watch('src/nunjucks/**/*.nunjucks', );
+  gulp.watch('src/nunjucks/**/*.nunjucks', ['htmlReload']);
 });
