@@ -25,7 +25,7 @@ gulp.task('default', ['serve']);
 // ----------------------------
 // Build Tasks
 // ----------------------------
-gulp.task('build', ['nunjucks']);
+gulp.task('build', ['nunjucks', 'moveImages', 'sass']);
 
 // ----------------------------
 // HTML Tasks
@@ -105,4 +105,13 @@ gulp.task('sassMove', () => {
     gulp.src('build/assets/css/maps/styles.css.map'),
     gulp.dest('/Volumes/Sitefinity/HealthAdvantage/theme/css/maps')
   ]);
+});
+
+// ------------------------------------------------
+// Image Tasks
+// ------------------------------------------------
+gulp.task('moveImages', () => {
+  return gulp
+    .src(['src/images/*.jpg', 'src/images/*.gif', 'src/images/*.svg'])
+    .pipe(gulp.dest('build/assets/images'));
 });
