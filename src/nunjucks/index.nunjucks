@@ -1,3 +1,7 @@
 {% extends 'layout.nunjucks' %}
 {% block content %}
+  <div class="intro-content">
+    <h1>Morgan Peck</h1>
+    <p>Front-End Developer</p>
+  </div>
 {% endblock %}

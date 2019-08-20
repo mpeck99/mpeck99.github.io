@@ -8,8 +8,10 @@
   <header class="portfolio-header">
     {% include "partials/navigation.nunjucks" %}
   </header>
-  <div class="wrapper">
-    {% block content %}{% endblock %}
-  </div>
+    <div class="wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
+    
 </body>
 </html>
