@@ -3,10 +3,10 @@ const gulp = require('gulp'),
   // del = require('del'),
   pump = require('pump'),
   // rename = require('gulp-rename'),
-  // sourcemaps = require('gulp-sourcemaps'),
+  sourcemaps = require('gulp-sourcemaps'),
   nunjucksRender = require('gulp-nunjucks-render'),
-  // sass = require('gulp-sass'),
-  // autoprefixer = require('gulp-autoprefixer'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
   // concat = require('gulp-concat'),
   // babel = require('gulp-babel'),
   // uglify = require('gulp-uglify'),
@@ -63,4 +63,46 @@ gulp.task('serve', function () {
   });
 
   gulp.watch('src/nunjucks/**/*.nunjucks', ['htmlReload']);
+  gulp.watch(
+    ['src/sass/**/*.scss'],
+    ['sass']
+  );
+});
+
+// ----------------------------
+// CSS Tasks
+// ----------------------------
+gulp.task('sass', cb => {
+  pump(
+    [
+      gulp.src('src/sass/styles.scss'),
+      sourcemaps.init(),
+      sass.sync().on('error', sass.logError),
+      autoprefixer({
+        browsers: ['last 3 versions', 'ie 10', 'ie 11'],
+        cascade: false,
+        grid: true
+      }),
+      sass({
+        outputStyle: 'compressed'
+      }).on('error', sass.logError),
+      sourcemaps.write('./maps'),
+      gulp.dest('build/assets/css'),
+      browserSync.stream({
+        match: '**/*.css'
+      })
+    ],
+    cb
+  );
+});
+
+gulp.task('sassMove', () => {
+  pump([
+    gulp.src('build/assets/css/styles.css'),
+    gulp.dest('/Volumes/Sitefinity/HealthAdvantage/theme/css')
+  ]);
+  pump([
+    gulp.src('build/assets/css/maps/styles.css.map'),
+    gulp.dest('/Volumes/Sitefinity/HealthAdvantage/theme/css/maps')
+  ]);
 });

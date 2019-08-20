@@ -1,4 +1,3 @@
 {% extends 'layout.nunjucks' %}
 {% block content %}
-  <h1>Morgan Peck is the coolest</h1>
 {% endblock %}

@@ -5,6 +5,9 @@
   {% include "partials/head.nunjucks" %}
 </head>
 <body>
+  <header class="portfolio-header">
+    {% include "partials/navigation.nunjucks" %}
+  </header>
   <div class="wrapper">
     {% block content %}{% endblock %}
   </div>
