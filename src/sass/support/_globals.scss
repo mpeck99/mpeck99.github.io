@@ -13,5 +13,8 @@ html, body {
   font-family: $main;
   font-size: 16px;
 
-  background-color: $black;
+  background-image: linear-gradient(rgba(11, 12, 16, .74), rgba(11, 12, 16, .74)),
+  url('../images/forest-fog.jpg');
+  background-size: cover;
+  background-position: center;
 }
