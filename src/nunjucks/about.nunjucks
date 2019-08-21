@@ -2,26 +2,12 @@
 {% set page = 'about' %}
 
 {% block content %}
-    <div class="home-content">
-      <h1>Morgan Peck</h1>
-      <p>Front-End Developer</p>
-      <div class="social-media">
-        <div class="social-media--icn">
-          <a href="#">
-            {% include 'svg/icn-facebook.nj' %}
-          </a>
-          
-        </div>
-        <div class="social-media--icn">
-          <a href="#">
-            {% include 'svg/icn-linkedin.nj' %}
-          </a>
-        </div>
-        <div class="social-media--icn">
-          <a href="#">
-            {% include 'svg/icn-git.nj' %}
-          </a>
-        </div>
+    <div class="about-content">
+      <h1>About me</h1>
+      <div class="intro">  
+        <p>I am a Front-End Developer located in Little Rock, Arkansas</p>
+        <p>I love creating websites and learning new skills. When I am not coding, I enjoy spending time with my husband and two fur children, playing video games, and sleeping.</p>
       </div>
+      
     </div>  
 {% endblock %}
