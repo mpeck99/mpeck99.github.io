@@ -1,0 +1,35 @@
+// ---------------------------------------------
+// ======---------------------------------======
+// About
+// ======---------------------------------======
+// ---------------------------------------------
+.body-about {
+  color: $ltgrey;
+
+  background: $navy;
+}
+
+.about-content {
+  width: 60%;
+
+  margin: 4rem auto;
+
+  h1 {
+    margin: 1rem 0 0.5rem 0;
+
+    font-size: 5rem;
+    color: $teal;
+  }
+}
+
+.intro {
+  width: 30rem;
+
+  margin: 0;
+
+  p {
+    &:nth-of-type(1){
+      font-size: 1.5rem;
+    }
+  }
+}
