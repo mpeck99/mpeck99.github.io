@@ -1,0 +1,27 @@
+{% extends 'layout.nunjucks' %}
+{% set page = 'about' %}
+
+{% block content %}
+    <div class="home-content">
+      <h1>Morgan Peck</h1>
+      <p>Front-End Developer</p>
+      <div class="social-media">
+        <div class="social-media--icn">
+          <a href="#">
+            {% include 'svg/icn-facebook.nj' %}
+          </a>
+          
+        </div>
+        <div class="social-media--icn">
+          <a href="#">
+            {% include 'svg/icn-linkedin.nj' %}
+          </a>
+        </div>
+        <div class="social-media--icn">
+          <a href="#">
+            {% include 'svg/icn-git.nj' %}
+          </a>
+        </div>
+      </div>
+    </div>  
+{% endblock %}
