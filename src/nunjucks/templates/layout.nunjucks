@@ -5,21 +5,21 @@
   {% include "partials/head.nunjucks" %}
 </head>
 {% if (page == 'home') %}
-  {% set bodyclass ="body__home" %}
+  {% set bodyclass ="body-home" %}
 {% elif (page =='about') %}
-  {% set bodyclass ="body__about" %}
+  {% set bodyclass ="body-about" %}
 {% elif (page =='portfolio') %}
-  {% set bodyclass ="body__portfolio" %}
+  {% set bodyclass ="body-portfolio" %}
 {% elif (page =='contact') %}
-  {% set bodyclass ="body__contact" %}
+  {% set bodyclass ="body-contact" %}
 {% elif (page =='gallery') %}
-  {% set bodyclass ="body__gallery" %}
+  {% set bodyclass ="body-gallery" %}
 {% endif %}
 <body class={{bodyclass}}>
   <header class="header">
     {% include "partials/navigation.nunjucks" %}
   </header>
-    <main class="wrapper">
+    <main class="main">
       {% block content %}
       {% endblock %}
     </main>
