@@ -19,9 +19,10 @@
   <header class="header">
     {% include "partials/navigation.nunjucks" %}
   </header>
-    <div class="wrapper">
+    <main class="wrapper">
       {% block content %}
       {% endblock %}
-    </div>
+    </main>
+    <script src="./assets/js/site.min.js"></script>
 </body>
 </html>

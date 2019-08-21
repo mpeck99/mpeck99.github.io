@@ -7,7 +7,22 @@
   height: 4rem;
 
   font-family: $main;
-  color: $turquoise;
+
+  a, &:visited {
+    padding: 0.25rem;
+
+    color: $turquoise;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      opacity: 0.8;
+    }
+
+    &.active {
+      border: 0.25rem solid $turquoise;
+    }
+  }
+
 
   ul {
     display: flex;
@@ -18,4 +33,5 @@
       list-style: none;
     }
   }
+
 }

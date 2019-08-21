@@ -25,7 +25,7 @@ gulp.task('default', ['serve']);
 // ----------------------------
 // Build Tasks
 // ----------------------------
-gulp.task('build', ['nunjucks', 'moveImages', 'sass', 'svgBuild', 'bootstrapsass']);
+gulp.task('build', ['nunjucks', 'moveImages', 'sass', 'svgBuild', 'bootstrapsass', 'siteJSBuild']);
 
 // ----------------------------
 // Browsersync
@@ -45,6 +45,7 @@ gulp.task('serve', function () {
     ['sass']
   );
   gulp.watch('src/svg/**/*.svg', ['svgReload']);
+  gulp.watch(['src/js/**/*.js'], ['siteJsReload']);
 });
 
 // ----------------------------
@@ -206,4 +207,29 @@ gulp.task('svgReload', () => {
   runSequence('svgtonj', 'svgBuild', 'svgConvertId', function () {
     return browserSync.reload();
   });
+});
+
+// ------------------------------------------------
+// Javascript Tasks
+// ------------------------------------------------
+var siteJSFiles = ['src/js/site.js'];
+gulp.task('siteJSBuild', cb => {
+  pump(
+    [
+      gulp.src(siteJSFiles),
+      sourcemaps.init(),
+      concat('site.js'),
+      babel({
+        presets: ['@babel/env']
+      }),
+      uglify(),
+      rename('site.min.js'),
+      sourcemaps.write('./maps'),
+      gulp.dest('build/assets/js/')
+    ],
+    cb
+  );
+});
+gulp.task('siteJsReload', ['siteJSBuild'], () => {
+  return browserSync.reload();
 });
