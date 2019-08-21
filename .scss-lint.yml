@@ -1,0 +1,40 @@
+scss_files: 'src/sass/**/*.css.scss'
+
+linters:
+  ImportantRule:
+    enabled: false
+  QualifyingElement:
+    enabled: false
+  SpaceAfterPropertyColon:
+    enabled: true
+  SpaceAfterPropertyName:
+    enabled: true
+  SpaceAfterVariableName:
+    enabled: true
+  SpaceAroundOperator:
+    enabled: true
+  SpaceBeforeBrace:
+    enabled: true
+  MergeableSelector:
+    enabled: false
+  LeadingZero:
+    enabled: false
+  BemDepth:
+    enabled: true
+  SelectorFormat:
+    convention: hyphenated_BEM
+  PropertySortOrder:
+    enabled: false
+  SelectorDepth:
+    max_depth: 5
+  NestingDepth:
+    max_depth: 6
+  PropertyUnits:
+    properties:
+      grid-template-rows: ['%', 'Hz', 'ch', 'cm', 'deg', 'dpcm', 'dpi', 'dppx', 'em', 'ex', 'fr', 'grad', 'in', 'kHz', 'mm', 'ms', 'pc', 'pt', 'px', 'q', 'rad', 'rem', 's', 'turn', 'vh', 'vmax', 'vmin', 'vw']
+  Indentation:
+    exclude:
+      - 'path/to/file.scss'
+      - 'path/to/directory/**'
+    severity: warning
+    width: 2
