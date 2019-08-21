@@ -3,9 +3,13 @@
 // Structure
 // ======---------------------------------======
 // ---------------------------------------------
-.wrapper {
+.main {
+  width: 100%;
   height: calc(100% - 4rem);
+
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  flex: 1 0 auto;
+  // justify-content: center;
+  // align-items: center;
 }
