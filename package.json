@@ -4,7 +4,7 @@
   "description": "my personal portfolio",
   "main": "index.js",
   "scripts": {
-    "installDev": "npm i bootstrap popper.js jquery --save && npm i gulp node-sass del gulp-nunjucks-render -D && npm i browser-sync gulp-rename gulp-sourcemaps -D && npm i replace-in-file run-sequence gulp-watch pump -D && npm i @babel/core gulp-babel @babel/preset-env gulp-exec -D && npm i gulp-uglify gulp-concat gulp-svgmin -D && npm i gulp-autoprefixer gulp-sass -D"
+    "installDev": "npm i bootstrap popper.js jquery --save && npm i gulp node-sass del gulp-nunjucks-render -D && npm i browser-sync gulp-rename gulp-sourcemaps -D && npm i replace-in-file run-sequence gulp-watch pump -D && npm i @babel/core gulp-babel @babel/preset-env gulp-exec -D && npm i gulp-uglify gulp-concat gulp-svgmin -D && npm i gulp-autoprefixer gulp-sass -D &npm in&  npm install babel-core babel-plugin-es6-promise babel-preset-env --save-dev"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,10 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "del": "^4.1.1",
     "gulp": "^3.9.1",
