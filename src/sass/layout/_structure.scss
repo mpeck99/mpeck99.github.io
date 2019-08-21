@@ -9,17 +9,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.intro-content {
-  flex: 0 1 auto;
-
-  h1 {
-    margin-bottom: 0;
-
-    font-family: $secondary;
-    font-size: 8rem;
-    color: $turquoise;
-
-    letter-spacing: 0.25rem;
-  }
-}
