@@ -4,14 +4,24 @@
 <head>
   {% include "partials/head.nunjucks" %}
 </head>
-<body>
-  <header class="portfolio-header">
+{% if (page == 'home') %}
+  {% set bodyclass ="body__home" %}
+{% elif (page =='about') %}
+  {% set bodyclass ="body__about" %}
+{% elif (page =='portfolio') %}
+  {% set bodyclass ="body__portfolio" %}
+{% elif (page =='contact') %}
+  {% set bodyclass ="body__contact" %}
+{% elif (page =='gallery') %}
+  {% set bodyclass ="body__gallery" %}
+{% endif %}
+<body class={{bodyclass}}>
+  <header class="header">
     {% include "partials/navigation.nunjucks" %}
   </header>
     <div class="wrapper">
       {% block content %}
       {% endblock %}
     </div>
-    
 </body>
 </html>
