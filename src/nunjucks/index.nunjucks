@@ -7,8 +7,8 @@
     <p>Front-End Developer</p>
     <div class="social-media">
       <div class="social-media--icn">
-        
-      </div>
+        {% include 'svg/icn-facebook.nj' %}
+      </div
     </div>
   </div>
 {% endblock %}
