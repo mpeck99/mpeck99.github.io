@@ -3,14 +3,19 @@
 // Home page
 // ======---------------------------------======
 // ---------------------------------------------
-.body__home {
+.body-home {
   background-image: linear-gradient(rgba($navy, 0.75), rgba($navy, 0.75)), url('../images/forest-fog.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .home-content {
-  flex: 0 1 auto;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   h1 {
     margin-bottom: 0;
@@ -24,7 +29,7 @@
 
   p {
     margin: 0;
-    
+
     text-align: center;
     font-weight: 600;
     font-size: 2rem;
