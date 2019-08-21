@@ -1,7 +1,14 @@
 {% extends 'layout.nunjucks' %}
+{% set page = 'home' %}
+
 {% block content %}
-  <div class="intro-content">
+  <div class="home-content">
     <h1>Morgan Peck</h1>
     <p>Front-End Developer</p>
+    <div class="social-media">
+      <div class="social-media--icn">
+        
+      </div>
+    </div>
   </div>
 {% endblock %}
