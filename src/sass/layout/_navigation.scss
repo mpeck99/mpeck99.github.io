@@ -6,6 +6,8 @@
 .main-nav {
   height: 4rem;
 
+  display: none;
+
   font-family: $main;
 
   a, &:visited {
@@ -34,4 +36,29 @@
     }
   }
 
+  @include tablet {
+    display: block;
+  }
+}
+
+.hamburger-menu {
+  display: block;
+
+  margin-right: 1rem;
+  margin-top: 1rem;
+
+  span {
+    height: 0.5rem;
+    width: 3rem;
+
+    margin-bottom: 0.5rem;
+
+    display: block;
+
+    background-color: $teal;
+  }
+
+  @include tablet {
+    display: none;
+  }
 }

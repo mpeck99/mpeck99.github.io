@@ -9,7 +9,7 @@
   background-position: center;
 }
 
-.home-content {
+.content-home {
   height: 100%;
   
   display: flex;
@@ -17,14 +17,23 @@
   justify-content: center;
   align-items: center;
 
+  font-family: $secondary;
+
   h1 {
     margin-bottom: 0;
 
-    font-family: $secondary;
-    font-size: 8rem;
+    font-size: 4rem;
     color: $teal;
 
     letter-spacing: 0.25rem;
+
+    @include mobilelgmax {
+      font-size: 2.5rem;
+    }
+
+    @include tablet {
+      font-size: 6rem;
+    }
   }
 
   p {
@@ -33,6 +42,15 @@
     text-align: center;
     font-weight: 600;
     font-size: 2rem;
+    font-family: $main;
     color: $teal;
+
+    @include mobilelgmax {
+      font-size: 1.25rem;
+    }
+
+    @include tablet {
+      font-size: 3rem;
+    }
   }
 }

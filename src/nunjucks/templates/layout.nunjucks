@@ -6,14 +6,8 @@
 </head>
 {% if (page == 'home') %}
   {% set bodyclass ="body-home" %}
-{% elif (page =='about') %}
-  {% set bodyclass ="body-about" %}
-{% elif (page =='portfolio') %}
-  {% set bodyclass ="body-portfolio" %}
-{% elif (page =='contact') %}
-  {% set bodyclass ="body-contact" %}
-{% elif (page =='gallery') %}
-  {% set bodyclass ="body-gallery" %}
+{% elif (page !='home') %}
+  {% set bodyclass ="body-subpage" %}
 {% endif %}
 <body class={{bodyclass}}>
   <header class="header">

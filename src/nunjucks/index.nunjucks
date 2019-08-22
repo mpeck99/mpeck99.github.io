@@ -2,7 +2,7 @@
 {% set page = 'home' %}
 
 {% block content %}
-    <div class="home-content">
+    <div class="content content-home">
       <h1>Morgan Peck</h1>
       <p>Front-End Developer</p>
       <div class="social-media">
