@@ -10,13 +10,15 @@
 
   font-family: $main;
 
-  a, &:visited {
+  a,
+  &:visited {
     padding: 0.25rem;
 
     color: $teal;
     text-decoration: none;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       opacity: 0.8;
     }
 
@@ -33,6 +35,12 @@
       margin: 1rem 2rem;
 
       list-style: none;
+
+      &:hover {
+        transform: translateY(0.5rem);
+        transition: 0.5s ease;
+      }
+      
     }
   }
 

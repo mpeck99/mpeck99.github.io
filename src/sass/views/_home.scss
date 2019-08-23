@@ -7,6 +7,12 @@
   background-image: linear-gradient(rgba($navy, 0.75), rgba($navy, 0.75)), url('../images/home-background.jpg');
   background-size: cover;
   background-position: center;
+
+  .footer {
+    p {
+      color: $teal;
+    }
+  }
 }
 
 .content-home {
@@ -36,11 +42,12 @@
     }
   }
 
+
   p {
     margin: 0;
 
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 2rem;
     font-family: $main;
     color: $teal;
@@ -54,3 +61,5 @@
     }
   }
 }
+
+
