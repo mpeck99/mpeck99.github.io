@@ -1,0 +1,27 @@
+<footer class="footer">
+  <p>@2019 Morgan Peck</p>
+  <div class="social-media">
+    <div class="social-media--icn">
+      <a href="#">
+        {% include 'svg/icn-facebook.nj' %}
+      </a>
+      
+    </div>
+    <div class="social-media--icn">
+      <a href="#">
+        {% include 'svg/icn-linkedin.nj' %}
+      </a>
+    </div>
+    <div class="social-media--icn">
+      <a href="#">
+        {% include 'svg/icn-git.nj' %}
+      </a>
+    </div>
+    <div class="social-media--icn">
+      <a href="#">
+        {% include 'svg/icn-email.nj' %}
+      </a>
+    </div>
+  </div>
+  <script src="./assets/js/site.min.js"></script>
+</footer>
