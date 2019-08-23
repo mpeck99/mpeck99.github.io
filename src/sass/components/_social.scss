@@ -6,14 +6,12 @@
 
 .social-media {
   display: flex;
-  justify-content: center;
-
 }
 
 .social-media--icn {
   margin: 1rem 1rem 0 1rem;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   svg {
     fill: $teal;
