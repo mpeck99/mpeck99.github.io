@@ -1,0 +1,21 @@
+.gallery-wrapper {
+  max-width: 100%;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card-image {
+  margin: 0.25rem;
+
+  img {
+    max-width: 13rem;
+    height: auto;
+  }
+
+  &.zoom {
+    transform: scale(2);
+    align-items: center;
+  }
+}
