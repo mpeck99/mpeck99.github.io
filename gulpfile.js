@@ -17,23 +17,23 @@ const gulp = require('gulp'),
   // jpegmini = require('jpegmini'),
   browserSync = require('browser-sync').create();
 
-// ----------------------------
-// Default
-// ----------------------------
-gulp.task('default', ['serve']);
+
+  function reload(done) {
+    browserSync.reload();
+    done();
+  }
 
 // ----------------------------
-// Build Tasks
+// HTML Tasks
 // ----------------------------
-gulp.task('build', ['nunjucks']);
-
 // ----------------------------
 // HTML Tasks
 // ----------------------------
 gulp.task('nunjucks', cb => {
   pump(
     [
-      gulp.src(['src/nunjucks/**/*.nunjucks', '!src/nunjucks/templates/**/*.nunjucks']),
+      gulp.src(['src/nunjucks/**/*.nunjucks',
+      '!src/nunjucks/templates/**/*.nunjucks']),
       nunjucksRender({
         envOptions: {
           autoescape: false
@@ -46,14 +46,11 @@ gulp.task('nunjucks', cb => {
   );
 });
 
-gulp.task('htmlReload', ['nunjucks'], () => {
-  return browserSync.reload();
-})
-
 // ----------------------------
 // Browsersync
 // ----------------------------
-gulp.task('serve', function () {
+
+gulp.task('serve', done => {
   browserSync.init({
     server: {
       baseDir: './build/'
@@ -62,5 +59,29 @@ gulp.task('serve', function () {
     notify: false
   });
 
-  gulp.watch('src/nunjucks/**/*.nunjucks', ['htmlReload']);
+  gulp.watch('src/nunjucks/**/*.nunjucks', gulp.series('nunjucks', reload));
+
+  done();
 });
+
+
+gulp.task(
+  'build',
+  gulp.series(
+    [
+      'nunjucks',
+    ],
+    done => {
+      done();
+    }
+  )
+);
+
+// Default
+// ----------------------------
+gulp.task(
+  'default',
+  gulp.series('serve', done => {
+    done();
+  })
+);
