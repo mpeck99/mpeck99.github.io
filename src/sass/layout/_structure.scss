@@ -44,11 +44,13 @@ footer {
 
 @keyframes slidein {
   from {
+    overflow: hidden;
     margin-left: 100%;
     width: 300%;
   }
 
   to {
+    overflow: hidden;
     margin-left: 0%;
     width: 100%;
   }

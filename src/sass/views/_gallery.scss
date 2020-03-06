@@ -8,6 +8,7 @@
 
 .card-image {
   margin: 0.25rem;
+  position: relative;
 
   img {
     max-width: 13rem;
@@ -15,7 +16,10 @@
   }
 
   &.zoom {
+    position: absolute;
     transform: scale(2);
     align-items: center;
+    z-index: 3;
   }
 }
+
