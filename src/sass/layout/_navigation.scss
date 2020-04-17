@@ -4,11 +4,13 @@
 // ======---------------------------------======
 // ---------------------------------------------
 .main-nav {
-  height: 4rem;
+  // height: 4rem;
 
   display: none;
 
   font-family: $main;
+  font-size: 1.5rem;
+  font-weight: 700;
 
   a,
   &:visited {
@@ -32,7 +34,7 @@
     display: flex;
 
     li {
-      margin: 1rem 2rem;
+      margin: 0 2rem;
 
       list-style: none;
 
@@ -40,7 +42,7 @@
         transform: translateY(0.5rem);
         transition: 0.5s ease;
       }
-      
+
     }
   }
 
