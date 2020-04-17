@@ -11,7 +11,7 @@
 {% endif %}
 <body class={{bodyclass}}>
   <header class="header">
-    <img src="/assets/images/mp-logo-angle-1.png" alt="Morgan Peck Logo" class="logo">
+    <img src="/assets/images/mp-logo-angle-2-1.png" alt="Morgan Peck Logo" class="logo">
     {% include "partials/navigation.nunjucks" %}
   </header>
     <main class="main">
