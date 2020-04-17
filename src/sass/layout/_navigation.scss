@@ -1,0 +1,74 @@
+// ---------------------------------------------
+// ======---------------------------------======
+// Navigation
+// ======---------------------------------======
+// ---------------------------------------------
+.main-nav {
+  // height: 4rem;
+
+  display: none;
+
+  font-family: $main;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  a,
+  &:visited {
+    padding: 0.25rem;
+
+    color: $teal;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &.active {
+      border-bottom: 0.25rem solid $teal;
+    }
+  }
+
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 2rem;
+
+      list-style: none;
+
+      &:hover {
+        transform: translateY(0.5rem);
+        transition: 0.5s ease;
+      }
+
+    }
+  }
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.hamburger-menu {
+  display: block;
+
+  margin-right: 1rem;
+  margin-top: 1rem;
+
+  span {
+    height: 0.5rem;
+    width: 3rem;
+
+    margin-bottom: 0.5rem;
+
+    display: block;
+
+    background-color: $teal;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}

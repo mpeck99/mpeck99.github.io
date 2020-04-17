@@ -1,0 +1,20 @@
+// ---------------------------------------------
+// ======---------------------------------======
+// Header styles
+// ======---------------------------------======
+// ---------------------------------------------
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 1rem;
+}
+
+.logo {
+  justify-self: flex-start;
+  align-self: flex-start;
+  width: 5rem;
+  height: auto;
+}

@@ -1,0 +1,57 @@
+// ---------------------------------------------
+// ======---------------------------------======
+// Structure
+// ======---------------------------------======
+// ---------------------------------------------
+footer {
+  flex-shrink: 0;
+}
+
+.main {
+  width: 100%;
+  // height: calc(100% - 4rem);
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.body-subpage {
+  color: $ltgrey;
+
+  background: $navy;
+}
+
+.content {
+  width: 80%;
+
+  margin: 2rem auto;
+
+  h1 {
+    margin: 1rem 0 0.5rem 0;
+
+    font-size: 5rem;
+    font-family: $secondary;
+    color: $turquoise;
+  }
+}
+
+.transition {
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slidein {
+  from {
+    overflow: hidden;
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    overflow: hidden;
+    margin-left: 0%;
+    width: 100%;
+  }
+}

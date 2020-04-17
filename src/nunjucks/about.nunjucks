@@ -1,0 +1,13 @@
+{% extends 'layout.nunjucks' %}
+{% set page = 'about' %}
+
+{% block content %}
+    <div class="content">
+      <h1>About me</h1>
+      <div class="intro">  
+        <p>I am a Front-End Developer located in Little Rock, Arkansas</p>
+        <p>II enjoy building user-friendly sites using HTML, JavaScript and CSS. I am constantly trying to learn new and improve upon  my skills as a front-end developer. When I am not coding you can find me with my family or playing video games.</p>
+      </div>
+      
+    </div>  
+{% endblock %}

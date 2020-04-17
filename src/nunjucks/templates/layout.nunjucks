@@ -4,9 +4,20 @@
 <head>
   {% include "partials/head.nunjucks" %}
 </head>
-<body>
-  <div class="wrapper">
-    {% block content %}{% endblock %}
-  </div>
+{% if (page == 'home') %}
+  {% set bodyclass ="body-home" %}
+{% elif (page !='home') %}
+  {% set bodyclass ="body-subpage" %}
+{% endif %}
+<body class={{bodyclass}}>
+  <header class="header">
+    <img src="/assets/images/mp-logo-angle-2-1.png" alt="Morgan Peck Logo" class="logo">
+    {% include "partials/navigation.nunjucks" %}
+  </header>
+    <main class="main">
+      {% block content %}
+      {% endblock %}
+    </main> 
+    {% include 'partials/footer.nunjucks' %}   
 </body>
 </html>

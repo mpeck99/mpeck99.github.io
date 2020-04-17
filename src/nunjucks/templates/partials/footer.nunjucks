@@ -1,0 +1,9 @@
+<footer class="footer">
+  <p>@2019 Morgan Peck</p>
+  <ul class="social-media-list">
+    <li><a href="https://www.linkedin.com/in/morganpeck99/" target='_blank'>{% include 'svg/icn-linkedin.nj' %}</a></li>
+    <li><a href="https://github.com/mpeck99" target='_blank'>{% include 'svg/icn-git.nj' %}</a></li>
+    <li><a href="mailto:mopeck99@gmail.com?subject=Portfolio" >{% include 'svg/icn-email.nj' %}</a></li>
+  </ul>
+  <script src="./assets/js/site.min.js"></script>
+</footer>

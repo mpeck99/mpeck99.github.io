@@ -4,7 +4,7 @@
   "description": "my personal portfolio",
   "main": "index.js",
   "scripts": {
-    "installDev": "npm i bootstrap popper.js jquery --save && npm i gulp node-sass del gulp-nunjucks-render -D && npm i browser-sync gulp-rename gulp-sourcemaps -D && npm i replace-in-file run-sequence gulp-watch pump -D && npm i @babel/core gulp-babel @babel/preset-env gulp-exec -D && npm i gulp-uglify gulp-concat gulp-svgmin -D && npm i gulp-autoprefixer gulp-sass -D"
+    "installDev": "npm i bootstrap popper.js jquery --save && npm i gulp node-sass del gulp-nunjucks-render -D && npm i browser-sync gulp-rename gulp-sourcemaps -D && npm i replace-in-file run-sequence gulp-watch pump -D && npm i @babel/core gulp-babel @babel/preset-env gulp-exec -D && npm i gulp-uglify gulp-concat gulp-svgmin -D && npm i gulp-autoprefixer gulp-sass -D &npm in&  npm install babel-core babel-plugin-es6-promise babel-preset-env --save-dev"
   },
   "repository": {
     "type": "git",
@@ -14,16 +14,22 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/mlpeck99/portfolio#readme",
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.16.1"
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.6.10",
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
     "del": "^4.1.1",
-    "gulp": "^4.0.2",
+    "dropbox": "^4.0.30",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -37,7 +43,7 @@
     "gulp-watch": "^5.0.1",
     "node-sass": "^4.13.1",
     "pump": "^3.0.0",
-    "replace-in-file": "^4.3.1",
+    "replace-in-file": "^4.1.3",
     "run-sequence": "^2.2.1"
   }
 }

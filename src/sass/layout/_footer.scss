@@ -1,0 +1,29 @@
+// ---------------------------------------------
+// ======---------------------------------======
+// Footer
+// ======---------------------------------======
+// ---------------------------------------------
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0.5rem 1rem;
+
+  p {
+    margin: 0;
+
+    font-weight: 500;
+  }
+
+  li {
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  .icn {
+    fill: $navy;
+    font-size: 1.75rem;
+  }
+}

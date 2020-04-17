@@ -1,0 +1,9 @@
+{% extends 'layout.nunjucks' %}
+{% set page = 'portfolio' %}
+
+{% block content %}
+    <div class="content">
+      <h1>Portfolio</h1>
+
+    </div>  
+{% endblock %}
