@@ -4,13 +4,13 @@
 // ======---------------------------------======
 // ---------------------------------------------
 .body-home {
-  background-image: linear-gradient(rgba($navy, 0.65), rgba($navy, 0.65)), url('../images/home-background.jpg');
+  background-image: linear-gradient(rgba($navy, 0.95), rgba($teal, 0.85)), url('../images/home-background.jpg');
   background-size: cover;
   background-position: center;
 
   .footer {
     p {
-      color: $teal;
+      color: $navy;
     }
   }
 }
@@ -29,7 +29,7 @@
     margin-bottom: 0;
 
     font-size: 4rem;
-    color: $teal;
+    color: $navy;
 
     letter-spacing: 0.25rem;
 
@@ -50,7 +50,7 @@
     font-weight: 400;
     font-size: 2rem;
     font-family: $main;
-    color: $teal;
+    color: $navy;
 
     @include mobilelgmax {
       font-size: 1.25rem;
