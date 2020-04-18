@@ -17,15 +17,9 @@ const gulp = require('gulp'),
   // jpegmini = require('jpegmini'),
   browserSync = require('browser-sync').create();
 
-// ----------------------------
-// Default
-// ----------------------------
-gulp.task('default', ['serve']);
 
-// ----------------------------
-// Build Tasks
-// ----------------------------
-gulp.task('build', ['nunjucks', 'moveImages', 'sass', 'svgBuild', 'bootstrapsass', 'siteJSBuild']);
+
+
 
 // ----------------------------
 // Browsersync
@@ -33,19 +27,20 @@ gulp.task('build', ['nunjucks', 'moveImages', 'sass', 'svgBuild', 'bootstrapsass
 gulp.task('serve', function () {
   browserSync.init({
     server: {
-      baseDir: './build/'
+      baseDir: './build/',
+      http: true,
     },
     open: false,
     notify: false
   });
 
-  gulp.watch('src/nunjucks/**/*.nunjucks', ['htmlReload']);
+  gulp.watch('src/nunjucks/**/*.nunjucks', gulp.series('htmlReload'));
   gulp.watch(
     ['src/sass/**/*.scss'],
-    ['sass']
+    gulp.series('sass')
   );
-  gulp.watch('src/svg/**/*.svg', ['svgReload']);
-  gulp.watch(['src/js/**/*.js'], ['siteJsReload']);
+  gulp.watch('src/svg/**/*.svg', gulp.series('svgReload'));
+  gulp.watch(['src/js/**/*.js'], gulp.series('siteJsReload'));
 });
 
 // ----------------------------
@@ -63,11 +58,11 @@ gulp.task('nunjucks', cb => {
       }),
       gulp.dest('build')
     ],
-    cb
+    cb()
   );
 });
 
-gulp.task('htmlReload', ['nunjucks'], () => {
+gulp.task('htmlReload', gulp.series('nunjucks'), () => {
   return browserSync.reload();
 })
 
@@ -98,17 +93,6 @@ gulp.task('sass', cb => {
   );
 });
 
-gulp.task('sassMove', () => {
-  pump([
-    gulp.src('build/assets/css/styles.css'),
-    gulp.dest('/Volumes/Sitefinity/HealthAdvantage/theme/css')
-  ]);
-  pump([
-    gulp.src('build/assets/css/maps/styles.css.map'),
-    gulp.dest('/Volumes/Sitefinity/HealthAdvantage/theme/css/maps')
-  ]);
-});
-
 gulp.task('bootstrapsass', () => {
   pump([
     gulp.src('node_modules/bootstrap/scss/bootstrap.scss'),
@@ -132,7 +116,7 @@ gulp.task('bootstrapsass', () => {
 // ------------------------------------------------
 gulp.task('moveImages', () => {
   return gulp
-    .src(['src/images/*.jpg', 'src/images/*.gif', 'src/images/*.svg'])
+    .src(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'])
     .pipe(gulp.dest('build/assets/images'));
 });
 
@@ -230,6 +214,14 @@ gulp.task('siteJSBuild', cb => {
     cb
   );
 });
-gulp.task('siteJsReload', ['siteJSBuild'], () => {
+gulp.task('siteJsReload', gulp.series('siteJSBuild'), () => {
   return browserSync.reload();
 });
+// ----------------------------
+// Default
+// ----------------------------
+gulp.task('default', gulp.series('serve'));
+// ----------------------------
+// Build Tasks
+// ----------------------------
+gulp.task('build', gulp.series('nunjucks', 'moveImages', 'sass', 'svgBuild', 'bootstrapsass', 'siteJSBuild'));
