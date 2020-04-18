@@ -27,7 +27,7 @@ const gulp = require('gulp'),
 gulp.task('serve', function () {
   browserSync.init({
     server: {
-      baseDir: './build/',
+      baseDir: './',
       http: true,
     },
     open: false,
@@ -84,7 +84,7 @@ gulp.task('sass', cb => {
         outputStyle: 'compressed'
       }).on('error', sass.logError),
       sourcemaps.write('./maps'),
-      gulp.dest('build/assets/css'),
+      gulp.dest('assets/css'),
       browserSync.stream({
         match: '**/*.css'
       })
@@ -106,7 +106,7 @@ gulp.task('bootstrapsass', () => {
       outputStyle: 'compressed'
     }).on('error', sass.logError),
     sourcemaps.write('./maps'),
-    gulp.dest('build/assets/css')
+    gulp.dest('assets/css')
   ]);
 });
 
@@ -117,7 +117,7 @@ gulp.task('bootstrapsass', () => {
 gulp.task('moveImages', () => {
   return gulp
     .src(['src/images/*.jpg', 'src/images/*.png', 'src/images/*.gif', 'src/images/*.svg'])
-    .pipe(gulp.dest('build/assets/images'));
+    .pipe(gulp.dest('assets/images'));
 });
 
 // ----------------------------
@@ -209,7 +209,7 @@ gulp.task('siteJSBuild', cb => {
       uglify(),
       rename('site.min.js'),
       sourcemaps.write('./maps'),
-      gulp.dest('build/assets/js/')
+      gulp.dest('assets/js/')
     ],
     cb
   );
