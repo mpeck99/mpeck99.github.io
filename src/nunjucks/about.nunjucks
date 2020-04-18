@@ -4,10 +4,7 @@
 {% block content %}
     <div class="content">
       <h1>About me</h1>
-      <div class="intro">  
-        <p>I am a Front-End Developer located in Little Rock, Arkansas</p>
-        <p>II enjoy building user-friendly sites using HTML, JavaScript and CSS. I am constantly trying to learn new and improve upon  my skills as a front-end developer. When I am not coding you can find me with my family or playing video games.</p>
-      </div>
+        <p>I am a Front-end Web Developer currently located in Little Rock, Arkansas. I enjoy building user-friendly sites using HTML, JavaScript and CSS. I am constantly trying to learn new and improve upon  my skills as a front-end developer. I received my bachelor's degree in Web Design and Development at Full Sail University. I love making websites and problem solving to create something wonderful.</p>
       
     </div>  
 {% endblock %}
