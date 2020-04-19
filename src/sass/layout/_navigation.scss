@@ -16,7 +16,7 @@
   &:visited {
     padding: 0.25rem;
 
-    color: $teal;
+    color: $turquoise;
     text-decoration: none;
 
     &:hover,
@@ -25,7 +25,7 @@
     }
 
     &.active {
-      border-bottom: 0.25rem solid $teal;
+      border-bottom: 0.25rem solid $turquoise;
     }
   }
 
@@ -43,6 +43,43 @@
         transition: 0.5s ease;
       }
 
+    }
+  }
+
+  &.js-close {
+    animation: slideUp 0.5s ease-in-out;
+  }
+
+  &.js-toggle {
+    height: 100%;
+    width: 100%;
+
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+
+    background-color: $teal;
+
+    overflow-x: hidden;
+    animation: slideDown 0.5s ease-in;
+
+    ul {
+      height: 100%;
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 2rem;
+    }
+    a {
+      color: $navy;
+      border-bottom-color: $navy;
     }
   }
 
@@ -65,10 +102,65 @@
 
     display: block;
 
-    background-color: $teal;
+    background-color: $turquoise;
+  }
+
+  &.js-toggle {
+    z-index: 2;
+
+    span {
+      background-color: $navy;
+
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(2){
+        display: none;
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(9px, -9px);
+        transition: ease-in 0.2s;
+      }
+    }
+  }
+
+  &.js-close {
+    &:nth-child(1) {
+      transform: rotate(-45deg);
+      transition: ease-in 0.2s;
+    }
+    &:nth-child(2){
+      display: block;
+      transition: ease-in 0.2s;
+    }
+    &:nth-child(3) {
+      transform: rotate(45deg) translate(-9px, 9px);
+      transition: ease-in 0.2s;
+    }
   }
 
   @include tablet {
     display: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: 100%;
+  }
+  to {
+    display: none;
+    height: 0%;
   }
 }

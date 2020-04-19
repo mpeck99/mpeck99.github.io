@@ -49,3 +49,28 @@ if (document.querySelector('.gallery-wrapper')) {
     });
   });
 }
+
+// Menu open / close 
+if(document.querySelector('.hamburger-menu')){
+  const menu = document.querySelector('.hamburger-menu'),
+        navList = document.querySelector('.main-nav');
+
+  menu.addEventListener('click', function(){
+      if(navList.classList.contains('js-toggle')){ 
+        navList.classList.add('js-close');
+        menu.classList.add('js-close');
+        navList.classList.remove('js-toggle'); 
+        menu.classList.remove('js-toggle');
+      } else {
+        navList.classList.add('js-toggle');
+        menu.classList.add('js-toggle') 
+      }
+
+      if(navList.classList.contains('js-close')){
+        setTimeout(() => {
+          navList.classList.remove('js-close');
+          menu.classList.remove('js-close');
+        }, 1000);
+      }
+  });
+}
