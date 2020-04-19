@@ -56,7 +56,7 @@ gulp.task('nunjucks', cb => {
         },
         path: ['src/nunjucks/templates']
       }),
-      gulp.dest('build')
+      gulp.dest('./')
     ],
     cb()
   );
