@@ -46,10 +46,6 @@
     }
   }
 
-  &.js-close {
-    animation: slideUp 0.5s ease-in-out;
-  }
-
   &.js-toggle {
     height: 100%;
     width: 100%;
@@ -126,21 +122,6 @@
     }
   }
 
-  &.js-close {
-    &:nth-child(1) {
-      transform: rotate(-45deg);
-      transition: ease-in 0.2s;
-    }
-    &:nth-child(2){
-      display: block;
-      transition: ease-in 0.2s;
-    }
-    &:nth-child(3) {
-      transform: rotate(45deg) translate(-9px, 9px);
-      transition: ease-in 0.2s;
-    }
-  }
-
   @include tablet {
     display: none;
   }
@@ -152,15 +133,5 @@
   }
   to {
     height: 100%;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    height: 100%;
-  }
-  to {
-    display: none;
-    height: 0%;
   }
 }
