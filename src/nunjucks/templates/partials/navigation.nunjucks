@@ -1,9 +1,10 @@
 {# ===------ Navigation ------=== #}
-<div class="hamburger-menu">
+
+<button class="hamburger-menu">
   <span></span>
   <span></span>
   <span></span>
-</div>
+</button>
 <nav class="main-nav" aria-label="Navigation">
   <ul>
     <li><a href="index.html" class="nav-link">Home</a></li>
