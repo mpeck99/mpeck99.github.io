@@ -14,6 +14,17 @@ footer {
     margin: 0;
 
     font-weight: 500;
+
+    @include tabletmax {
+      order: 2;
+    }
+  }
+
+  ul {
+    @include tabletmax {
+      order: 1;
+      padding-left: 0;
+    }
   }
 
   li {
@@ -24,6 +35,14 @@ footer {
 
   .icn {
     fill: $navy;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
+  }
+
+  @include tabletmax {
+    flex-direction: column;
   }
 }
