@@ -10,6 +10,15 @@
 
   margin: 0;
   padding: 1rem;
+
+  button {
+    background: none;
+    border: 0;
+
+    &:hover, &:focus {
+      cursor: pointer;
+    }
+  }
 }
 
 .logo {
