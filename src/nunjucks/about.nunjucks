@@ -5,6 +5,16 @@
     <div class="content">
       <h1>About me</h1>
         <p>I am a Front-end Web Developer currently located in Little Rock, Arkansas. I enjoy building user-friendly sites using HTML, JavaScript and CSS. I am constantly trying to learn new and improve upon  my skills as a front-end developer. I received my bachelor's degree in Web Design and Development at Full Sail University. I love making websites and problem solving to create something wonderful.</p>
-      
+      <h2>Skills</h2>
+      <div class="skills-prism">
+          <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>NodeJS</li>
+          <li>GIT</li>
+          <li>Sass</li>
+        </ul>
+      </div>
     </div>  
 {% endblock %}

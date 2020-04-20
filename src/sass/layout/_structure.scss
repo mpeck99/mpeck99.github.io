@@ -9,7 +9,6 @@ footer {
 
 .main {
   width: 100%;
-  // height: calc(100% - 4rem);
 
   display: flex;
   flex-direction: column;
@@ -27,13 +26,23 @@ footer {
 
   margin: 2rem auto;
 
-  h1 {
+  h1, h2, h3, h4{
     margin: 1rem 0 0.5rem 0;
-
-    font-size: 3rem;
+    
     font-family: $secondary;
     color: $turquoise;
   }
+
+  h1 {
+    margin: 1rem 0 0.5rem 0;
+
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
 }
 
 .transition {
