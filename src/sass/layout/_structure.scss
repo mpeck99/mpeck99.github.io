@@ -24,6 +24,8 @@ footer {
 .content {
   width: 80%;
 
+  flex-grow: 1;
+
   margin: 2rem auto;
 
   h1, h2, h3, h4{
