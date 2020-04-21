@@ -19,7 +19,7 @@
   max-width: 100%;
   max-height: 100%;
 
-  perspective: 400px;
+  perspective: 300px;
 }
 
 
@@ -47,7 +47,7 @@
     margin: auto 0;
 
     img {
-      width: 8rem;
+      max-width: 8rem;
 
       @include tablet {
         width: 10rem
@@ -56,37 +56,37 @@
 
     text-align: center;
     &:nth-of-type(1){
-      transform: rotateY(0deg) translateZ(400px);
+      transform: rotateY(0deg) translateZ(300px);
       @include tablet {
         transform: translateZ(500px);
       }
     }
     &:nth-of-type(2){
-      transform: rotateY(60deg) translateZ(400px);
+      transform: rotateY(60deg) translateZ(300px);
       @include tablet {
         transform: rotateY(60deg) translateZ(500px);
       }
     }
     &:nth-of-type(3){
-      transform: rotateY(1200deg) translateZ(400px);
+      transform: rotateY(1200deg) translateZ(300px);
       @include tablet {
         transform: rotateY(1200deg) translateZ(500px);
       }
     }
     &:nth-of-type(4){
-      transform: rotateY(180deg) translateZ(400px);
+      transform: rotateY(180deg) translateZ(300px);
       @include tablet {
         transform: rotateY(180deg) translateZ(500px);
       }
     }
     &:nth-of-type(5){
-      transform: rotateY(240deg) translateZ(400px);
+      transform: rotateY(240deg) translateZ(300px);
       @include tablet {
         transform: rotateY(240deg) translateZ(500px);
       }
     }
     &:nth-of-type(6){
-      transform: rotateY(300deg) translateZ(400px);
+      transform: rotateY(300deg) translateZ(300px);
       @include tablet {
         transform: rotateY(300deg) translateZ(500px);
       }
