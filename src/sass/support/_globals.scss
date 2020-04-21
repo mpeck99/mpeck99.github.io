@@ -5,8 +5,6 @@
 // ---------------------------------------------
 
 html, body {
-  min-height: 100vh;
-
   padding: 0;
   margin: 0;
 
@@ -14,6 +12,10 @@ html, body {
   font-size: 16px;
 }
 
+
+body {
+  min-height: 100vh;
+}
 * {
   box-sizing: border-box;
 }
