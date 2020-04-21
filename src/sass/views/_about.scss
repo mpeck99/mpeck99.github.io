@@ -48,7 +48,7 @@
 
     img {
       width: 8rem;
-      height: auto;
+      max-height: 6rem;
 
       @include tablet {
         width: 10rem
