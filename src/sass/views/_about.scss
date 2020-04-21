@@ -39,7 +39,7 @@
 
   font-size: 3rem;
 
-  overflow-x: hidden;
+  // overflow: hidden;
 
   li {
     position: absolute;
@@ -47,6 +47,8 @@
     height: 100%;
 
     margin: auto 0;
+
+    overflow: hidden;
 
     img {
       max-width: 8rem;
