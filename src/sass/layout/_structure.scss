@@ -8,12 +8,14 @@ footer {
 }
 
 .main {
-  width: 100%;
+  width: 90%;
   // height: auto;
 
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+
+  margin: 2rem 1rem;
 }
 
 .body-subpage {

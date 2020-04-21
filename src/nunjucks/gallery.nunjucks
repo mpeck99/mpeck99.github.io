@@ -2,7 +2,7 @@
 {% set page = 'gallery' %}
 
 {% block content %}
-    <div class="content">
+
       <h1>Gallery</h1>
       <!-- <div class="gallery-wrapper">
         <div class="card-image">
@@ -25,5 +25,5 @@
         </div>
       </div> -->
       
-    </div>  
+
 {% endblock %}
