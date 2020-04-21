@@ -9,11 +9,11 @@ footer {
 
 .main {
   width: 90%;
-  // height: auto;
+  height: auto;
 
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex-grow: 1;
 
   margin: 2rem 1rem;
 }
