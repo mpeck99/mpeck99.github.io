@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 
   @include mobilelgmax {
-    min-height: 100vh - 3rem;
+    min-height: calc(100vh - 3rem);
   }
 }
 * {
