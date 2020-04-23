@@ -1,5 +1,5 @@
 <footer class="footer">
-  <p>@2019 Morgan Peck</p>
+  <p>@2020 Morgan Peck</p>
   <ul class="social-media-list">
     <li><a href="https://www.linkedin.com/in/morganpeck99/" target='_blank'>{% include 'svg/icn-linkedin.nj' %}</a></li>
     <li><a href="https://github.com/mpeck99" target='_blank'>{% include 'svg/icn-git.nj' %}</a></li>
