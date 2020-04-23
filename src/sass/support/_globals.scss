@@ -15,6 +15,10 @@ html, body {
 
 body {
   min-height: 100vh;
+
+  @include mobilelgmax {
+    min-height: 100vh - 3rem;
+  }
 }
 * {
   box-sizing: border-box;
