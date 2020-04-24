@@ -46,7 +46,7 @@
     }
   }
 
-  &.js-toggle {
+  &.js-open {
     height: 100%;
     width: 100%;
 
@@ -58,8 +58,8 @@
 
     background-color: $teal;
 
-    overflow-x: hidden;
-    animation: slideDown 0.5s ease-in;
+    overflow: hidden;
+    animation: slideDown 0.5s ease-in-out;
 
     ul {
       height: 100%;
@@ -79,6 +79,10 @@
     }
   }
 
+  &.js-close {
+    animation: slideUp 0.5s ease-in-out;
+  }
+
   @include tablet {
     display: block;
   }
@@ -91,6 +95,7 @@
   margin-top: 1rem;
   border: none;
   outline: none;
+  
   span {
     height: 0.25rem;
     width: 2.5rem;
@@ -102,7 +107,7 @@
     background-color: $turquoise;
   }
 
-  &.js-toggle {
+  &.js-open {
     z-index: 2;
 
     span {
@@ -123,6 +128,25 @@
     }
   }
 
+  &.js-close {
+    span {
+      background-color: $navy;
+
+      &:nth-child(1) {
+        transform: rotate(0deg);
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(2){
+        display: block;
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(3) {
+        transform: rotate(0deg);
+        transition: ease-in 0.2s;
+      }
+    }
+  }
+
   @include tablet {
     display: none;
   }
@@ -134,5 +158,15 @@
   }
   to {
     height: 100%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0%;
   }
 }

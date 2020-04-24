@@ -53,15 +53,25 @@ if (document.querySelector('.gallery-wrapper')) {
 // Menu open / close 
 if(document.querySelector('.hamburger-menu')){
   const menu = document.querySelector('.hamburger-menu'),
-        navList = document.querySelector('.main-nav');
+        navList = document.querySelector('.main-nav'),
+        body = document.querySelector('body');
 
   menu.addEventListener('click', function(){
-      if(navList.classList.contains('js-toggle')){ 
-        navList.classList.remove('js-toggle'); 
-        menu.classList.remove('js-toggle');
+      if(navList.classList.contains('js-open')){ ;
+        menu.classList.add('js-close');
+        navList.classList.add('js-close');
+        setTimeout(() => {
+          navList.classList.remove('js-open'); 
+          menu.classList.remove('js-open')
+          menu.classList.remove('js-close');
+          navList.classList.remove('js-close');
+          body.classList.remove('js-open');
+           
+        }, 500);
       } else {
-        navList.classList.add('js-toggle');
-        menu.classList.add('js-toggle') 
+        navList.classList.add('js-open');
+        body.classList.add('js-open');
+        menu.classList.add('js-open');
       }
   });
 }
