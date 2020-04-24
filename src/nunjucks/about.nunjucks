@@ -3,19 +3,22 @@
 
 {% block content %}
     <div class="content">
-      <h1>About me</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eaque nemo iure error. Eius perspiciatis voluptatibus hic officia, reiciendis delectus porro ipsum unde, expedita debitis dolorum distinctio repudiandae quas dignissimos.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus asperiores quae aperiam at placeat quo dolorum harum corrupti maxime, unde dicta! Molestias ipsum odit nesciunt saepe quas quia iusto similique!<</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus asperiores quae aperiam at placeat quo dolorum harum corrupti maxime, unde dicta! Molestias ipsum odit nesciunt saepe quas quia iusto similique!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus asperiores quae aperiam at placeat quo dolorum harum corrupti maxime, unde dicta! Molestias ipsum odit nesciunt saepe quas quia iusto similique!<</p>
-      <h2>Skills</h2>
-      <div class="skills-prism">
-          <ul class="skills-list">
-          <li><img src="/assets/images/html5-logo.png" alt="HTML5 Logo"></li>
-          <li><img src="/assets/images/css-logo.png" alt="CSS Logo"></li>
-          <li><img src="/assets//images/js-logo.png" alt="JavaScript Logo"></li>
-          <li><img src="/assets/images/node.png" alt="NodeJS Logo"></li>
-          <li><img src="/assets/images/git-logo-no-txt.png" alt="Git Logo"></li>
-          <li><img src="/assets/images/sass-logo.png" alt="Sass Logo"></li>
-        </ul>
-      </div>
+      <section>
+        <h1>About me</h1>
+        <p>My name is Morgan Peck, I am a front-end web developer! I graduated from Full Sail University in 2018 with a Bachelors in Web Design and Development. Currently I live in Little Rock, Arkansas, and I have worked on a variety of projects from personalized websites, digital cateloging with a content management system, and front-end development on a variety of large projects for a corporation. I have a passion for front-end web development, learning new languages and techonologies, and challenging myself to improve my skillset. </p>
+      </section>
+      <section>
+         <h2>Skills</h2>
+        <div class="skills-prism">
+            <ul class="skills-list">
+            <li><img src="/assets/images/html5-logo.png" alt="HTML5 Logo"></li>
+            <li><img src="/assets/images/css-logo.png" alt="CSS Logo"></li>
+            <li><img src="/assets/images/js-logo.png" alt="JavaScript Logo"></li>
+            <li><img src="/assets/images/node.png" alt="NodeJS Logo"></li>
+            <li><img src="/assets/images/git-logo-no-txt.png" alt="Git Logo"></li>
+            <li><img src="/assets/images/sass-logo.png" alt="Sass Logo"></li>
+          </ul>
+        </div>
+      </section>
     </div>  
 {% endblock %}
