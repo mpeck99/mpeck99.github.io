@@ -15,6 +15,10 @@ html, body {
 
 body {
   min-height: 100vh;
+
+  &.js-open {
+    overflow: hidden;
+  }
 }
 * {
   box-sizing: border-box;
