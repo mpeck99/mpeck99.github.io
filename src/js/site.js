@@ -88,19 +88,18 @@ function personalMovies() {
                 fetch(apiUrl).then(response => {
                     response.json().then(movie => {
                        for(var i = 0; i <movie.results.length; i++){
-                           let overview = '',
+                           let overview  = movie.results[i].overview,
                                  title = movie.results[i].title,
                                  year = movie.results[i].release_date.split('-')[0];
 
+                          //  if(movie.results[i].overview.length >= 1000){
+                          //      overview = movie.results[i].overview.substring(0,1000)+'...';
+                          //  }
+                          //  else {
+                               
+                          //  }
 
-                           if(movie.results[i].overview.length >= 400){
-                               overview = movie.results[i].overview.substring(0,380)+'...';
-                           }
-                           else {
-                               overview = movie.results[i].overview;
-                           }
-
-                            movieWrapper.innerHTML+= '<div class="card"><img src="https://image.tmdb.org/t/p/w500/'+ movie.results[i].poster_path + '" alt="'+title+' movie poster"/><div class="details"><h2>'+ title+'</h2><p class="date">'+year+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+title+'" target="_blank" class="read-more" aria-label="Read more about'+title+'">Read more</a></div></div>'
+                            movieWrapper.innerHTML+= '<div class="card" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.results[i].poster_path+'\');"><div class="details"><h2>'+ title+'</h2><p class="date">'+year+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+title+'" target="_blank" class="read-more" aria-label="Read more about'+title+'">Read more</a></div></div>'
                            break;
                        } 
                        

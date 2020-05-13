@@ -7,8 +7,9 @@
 }
 
 .card {
-  width: 15rem;
-  max-height: 20rem;
+  width: 18rem;
+  height: 26rem;
+
 
   display: flex;
   flex-direction: column;
@@ -18,6 +19,9 @@
   position: relative;
 
   color: $black;
+
+  background-size: cover;
+  background-position: center;
   
   h2 {
     color: $black;
@@ -50,34 +54,38 @@
   }
 
   img {
-    width: 15rem;
-    min-height: 20rem;
+    width: 15.6rem;
+    min-height: 21.6rem;
+  height: auto;
+  }
+
+  &:hover,&:focus {
+
+    .details { 
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      padding: 0.75rem;
+
+      position: absolute;
+      bottom: 0;
+
+      background-color: rgba($turquoise, 0.9);
+
+      z-index: 1;
+
+      h2 {
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+      }
+
+    }
   }
 }
 
 .details {
   display: none;
-
-  &.active { 
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    padding: 0.75rem;
-
-    position: absolute;
-    bottom: 0;
-
-    background-color: rgba($turquoise, 0.9);
-
-    z-index: 1;
-
-    h2 {
-      margin-top: 0.3rem;
-      margin-bottom: 0.3rem;
-    }
-
-  }
 }
 
