@@ -9,10 +9,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  align-items: center;
+  justify-content: center;
   width: 10rem;
   img {
-    max-width: 10rem;
+    width: 10rem;
+    min-height: 15rem;
+    // height: auto;
   }
 }
 
