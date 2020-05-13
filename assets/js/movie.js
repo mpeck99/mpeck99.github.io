@@ -16,13 +16,13 @@ function personalMovies() {
 
 
                            if(movie.results[i].overview.length >= 400){
-                               overview = movie.results[i].overview.substring(0,400)+'...';
+                               overview = movie.results[i].overview.substring(0,380)+'...';
                            }
                            else {
                                overview = movie.results[i].overview;
                            }
-                           
-                            movieWrapper.innerHTML+= '<div class="card"><img src="https://image.tmdb.org/t/p/w500/'+ movie.results[i].poster_path + '" alt="'+title+' movie poster"/><div class="details"><h2>'+ title+'</h2><p class="date">'+year+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+title+'" target="_blank" class="read-more">Read more about '+title+'</a></div></div>'
+
+                            movieWrapper.innerHTML+= '<div class="card"><img src="https://image.tmdb.org/t/p/w500/'+ movie.results[i].poster_path + '" alt="'+title+' movie poster"/><div class="details"><h2>'+ title+'</h2><p class="date">'+year+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+title+'" target="_blank" class="read-more" aria-label="Read more about'+title+'">Read more</a></div></div>'
                            break;
                        } 
                        
