@@ -1,4 +1,4 @@
-.gallery-wrapper {
+.movie-wrapper {
   max-width: 100%;
 
   display: flex;
@@ -6,20 +6,17 @@
   justify-content: center;
 }
 
-.card-image {
-  margin: 0.25rem;
-  position: relative;
-
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 10rem;
   img {
-    max-width: 13rem;
-    height: auto;
+    max-width: 10rem;
   }
+}
 
-  &.zoom {
-    position: absolute;
-    transform: scale(2);
-    align-items: center;
-    z-index: 3;
-  }
+.details {
+  display: none;
 }
 
