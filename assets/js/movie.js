@@ -10,7 +10,17 @@ function personalMovies() {
                 fetch(apiUrl).then(response => {
                     response.json().then(movie => {
                        for(var i = 0; i <movie.results.length; i++){
-                            movieWrapper.innerHTML+= '<div class="card"><img src="https://image.tmdb.org/t/p/w500/'+ movie.results[i].poster_path + '"/><div class="details"><h2>'+ movie.results[i].title+'</h2><p>'+movie.results[i].release_date.split('-')[0]+'</p><p>'+movie.results[i].overview+'</p></div></div>'
+                           var overview = '';
+
+
+                           if(movie.results[i].overview.length >= 400){
+                               overview = movie.results[i].overview.substring(0,400)+'...';
+                           }
+                           else {
+                               overview = movie.results[i].overview;
+                           }
+                           console.log(movie.results[i]);
+                            movieWrapper.innerHTML+= '<div class="card"><img src="https://image.tmdb.org/t/p/w500/'+ movie.results[i].poster_path + '"/><div class="details"><h2>'+ movie.results[i].title+'</h2><p class="date">'+movie.results[i].release_date.split('-')[0]+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+movie.results[i].title+'" target="_blank" class="read-more">Read More</a></div></div>'
                            break;
                        } 
                        
