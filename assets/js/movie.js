@@ -13,7 +13,7 @@ function personalMovies() {
                     response.json().then(movie => {
                        for(var i = 0; i <movie.results.length; i++){
                            var year = movie.results[i].release_date.split('-')[0];
-                           apiArray.push({'title':movie.results[0].title,'year':year});
+                           apiArray.push({'title':movie.results[0].title,'year':year, 'poster':movie.results[i].poster_path});
                            break;
                        }                    
                     });
