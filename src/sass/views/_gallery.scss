@@ -53,34 +53,31 @@
     width: 15rem;
     min-height: 20rem;
   }
-
-  &:hover,&:focus {
-
-    .details { 
-      width: 100%;
-      height: 100%;
-
-      display: block;
-
-      padding: 0.75rem;
-
-      position: absolute;
-      bottom: 0;
-
-      background-color: rgba($turquoise, 0.9);
-
-      z-index: 1;
-
-      h2 {
-        margin-top: 0.3rem;
-        margin-bottom: 0.3rem;
-      }
-
-    }
-  }
 }
 
 .details {
   display: none;
+
+  &.active { 
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    padding: 0.75rem;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: rgba($turquoise, 0.9);
+
+    z-index: 1;
+
+    h2 {
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+  }
 }
 
