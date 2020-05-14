@@ -112,8 +112,8 @@ setTimeout(function(){
     fetch(getUrl).then(response => {
       response.json().then(movie => {
         let overview ='';
-        if(movie.overview.length >= 350){
-          overview = movie.overview.substring(0,350)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="read-more" aria-label="Read more about'+movie.title+'">...read more</a>';
+        if(movie.overview.length >= 325){
+          overview = movie.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="read-more" aria-label="Read more about'+movie.title+'">...read more</a>';
         }
         else {
             overview = movie.overview;
