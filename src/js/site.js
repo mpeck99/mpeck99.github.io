@@ -76,6 +76,16 @@ if(document.querySelector('.hamburger-menu')){
   });
 }
 
+function searchSubmit () {
+  document.querySelector('.search-submit').addEventListener('click', function(){
+    var value = document.querySelector('#search').value.replace(/\s+/g, '-');
+    console.log(value);
+    location.href='#'+value;
+  });
+}
+
+searchSubmit();
+
 var movieArray = [];
 const movieWrapper = document.querySelector('.movie-wrapper');
 if(movieWrapper){
@@ -118,8 +128,8 @@ setTimeout(function(){
         else {
             overview = movie.overview;
         }
-        const vote = (movie.vote_average*10);
-        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"><div class="details"><h2 id='+movie.title.replace(/\s+/g, '-')+'>'+movie.title+'</h2><span class="score">'+vote+'%</span><p class="tagline">'+movie.tagline+'</p><p class="date">'+movie.release_date.split('-')[0]+'</p><p class="genre">'+movie.genres[0].name+', '+movie.genres[1].name+'</p><p class="overview">'+overview+'</p></div></div>'
+        const vote = (movie.vote_average)*10;
+        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"id='+movie.title.replace(/\s+/g, '-').toLowerCase()+'><div class="details"><h2>'+movie.title+'</h2><span class="score">'+vote+'%</span><p class="tagline">'+movie.tagline+'</p><p class="date">'+movie.release_date.split('-')[0]+'</p><p class="genre">'+movie.genres[0].name+'</p><p class="overview">'+overview+'</p></div></div>'
       // break;                     
       }).catch(error => {
         console.error('we came across an error', error);
