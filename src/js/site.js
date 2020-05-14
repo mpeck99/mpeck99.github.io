@@ -94,7 +94,7 @@ if(movieWrapper){
       response.json().then(json =>{
           const movies = json;
           for(var i = 0; i < movies.values.length; i++){
-               const apiUrl = 'https://api.themoviedb.org/3/search/movie?api_key=e444034c3d7ef62e63059e6e8ac5b828&query='+movies.values[i][0]+'&year='+movies.values[i][1]+'&language=en-US&include_adult=false';
+               const apiUrl = 'https://api.themoviedb.org/3/search/movie?api_key=e444034c3d7ef62e63059e6e8ac5b828&query='+movies.values[i][0].replace(/\s+/g,'-')+'&primary_release_year='+movies.values[i][1]+'&year='+movies.values[i][1]+'&language=en-US&include_adult=false';
               fetch(apiUrl).then(response => {
                   response.json().then(movie => {
                      for(var i = 0; i <movie.results.length; i++){
@@ -113,7 +113,7 @@ if(movieWrapper){
     console.error('There was an issue with the resquest', err);
   });
 }
-
+console.log(movieArray);
 setTimeout(function(){
   
   for(var x=0; x<movieArray.length; x++){
@@ -131,8 +131,8 @@ setTimeout(function(){
         const vote = (movie.vote_average)*10;
         movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"id='+movie.title.replace(/\s+/g, '-').toLowerCase()+'><div class="details"><h2>'+movie.title+'</h2><span class="score">'+vote+'%</span><p class="tagline">'+movie.tagline+'</p><p class="date">'+movie.release_date.split('-')[0]+'</p><p class="genre">'+movie.genres[0].name+'</p><p class="overview">'+overview+'</p></div></div>'
       // break;                     
-      }).catch(error => {
-        console.error('we came across an error', error);
+      }).catch(err => {
+        console.error('we came across an error', err);
       })
   });
   }
