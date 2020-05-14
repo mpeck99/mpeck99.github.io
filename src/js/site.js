@@ -76,12 +76,8 @@ if(document.querySelector('.hamburger-menu')){
   });
 }
 
-const movieArray = [];
+var movieArray = [];
 const movieWrapper = document.querySelector('.movie-wrapper');
-function personalMovies() {
-    
-}
-
 if(movieWrapper){
   const googleUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1nXRZYrOnedMOvioQJxbIQKTpc9_XCGI23-KMk8jwZQU/values/Movies!A:D?key=AIzaSyDrWhgTrY_NIQ7pa19SpdYtF0Wcom3stDA';
   fetch(googleUrl).then(response=>{
@@ -92,27 +88,47 @@ if(movieWrapper){
               fetch(apiUrl).then(response => {
                   response.json().then(movie => {
                      for(var i = 0; i <movie.results.length; i++){
-                         let overview  = movie.results[i].overview,
-                               title = movie.results[i].title,
-                               year = movie.results[i].release_date.split('-')[0];
-
-                        //  if(movie.results[i].overview.length >= 1000){
-                        //      overview = movie.results[i].overview.substring(0,1000)+'...';
-                        //  }
-                        //  else {
-                             
-                        //  }
-
-                          movieWrapper.innerHTML+= '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.results[i].poster_path+'\');"><div class="details"><h2>'+ title+'</h2><p class="date">'+year+'</p><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.results[i].id+'-'+title+'" target="_blank" class="read-more" aria-label="Read more about'+title+'">Read more</a></div></div>'
-                         break;
-                     } 
-                     
-                  });
+                         let  title = movie.results[i].title,
+                              year = movie.results[i].release_date.split('-')[0];
+                            movieArray.push({title:title,year:year,id: movie.results[i].id,poster:'https://image.tmdb.org/t/p/original/'+movie.results[i].poster_path});
+                            break;
+                     }                      
+                  }).catch(error => {
+                    console.error('we came across an error', error);
+                  })
               });
           } 
-      });
-  }); 
+      })
+  }).catch(err=>{
+    console.error('There was an issue with the resquest', err);
+  });
 }
 
+setTimeout(function(){
+  
+  for(var x=0; x<movieArray.length; x++){
+    const getUrl = 'https://api.themoviedb.org/3/movie/'+movieArray[x].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US'
+    
+    fetch(getUrl).then(response => {
+      response.json().then(movie => {
+        let overview ='';
+        if(movie.overview.length >= 350){
+          overview = movie.overview.substring(0,350)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="read-more" aria-label="Read more about'+movie.title+'">...read more</a>';
+        }
+        else {
+            overview = movie.overview;
+        }
+        const vote = (movie.vote_average*10);
+        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"><div class="details"><h2>'+movie.title+'</h2><span class="score">'+vote+'%</span><p class="tagline">'+movie.tagline+'</p><p class="date">'+movie.release_date.split('-')[0]+'</p><p class="genre">'+movie.genres[0].name+', '+movie.genres[1].name+'</p><p class="overview">'+overview+'</p></div></div>'
+      // break;                     
+      }).catch(error => {
+        console.error('we came across an error', error);
+      })
+  });
+  }
+  
+},500);
 
-// console.log(movieArray);
+
+
+

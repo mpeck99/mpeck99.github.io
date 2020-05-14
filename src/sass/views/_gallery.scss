@@ -45,21 +45,24 @@
   margin-top: 0;
  }
 
-  .overview{
-    max-height: 100%;
+ .tagline {
+  max-width: 75%;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 
-    margin: auto 0;
-    font-size: 0.9rem;
-    line-height: 1;
-    text-align: left;
-    text-overflow: ellipsis;
+  font-style: italic;
+  font-size: 0.9rem;
+ }
+
+ .genre {
+   font-size: 0.9rem;
+ }
+  .overview{
+    font-size: 1rem;
   }
 
   .read-more {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-
+    margin-left: 0.2rem;
     color: $black;
     font-size: 0.8rem;
     font-weight: 600;
@@ -71,7 +74,6 @@
 
   display: none;
 
-
   padding: 0.75rem;
 
   position: absolute;
@@ -80,8 +82,16 @@
   background-color: rgba($turquoise, 0.9);
 
   z-index: 1;
+  
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    text-align: left;
+  }
 
   h2 {
+    max-width: 80%;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
   }
@@ -89,5 +99,25 @@
   &:hover, &:focus {
     display: block;
   }
+}
+
+.score {
+  width: 3rem;
+  height: 3rem;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+  margin-bottom: 1rem;;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  border-radius: 50%;
+  background-color: $navy;
+  color: $turquoise;
+  font-weight: 600;
 }
 
