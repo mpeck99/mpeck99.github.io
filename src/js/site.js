@@ -78,7 +78,7 @@ if(document.querySelector('.hamburger-menu')){
 
 function searchSubmit () {
   document.querySelector('.search-submit').addEventListener('click', function(){
-    var value = document.querySelector('#search').value.replace(/\s+/g, '-');
+    var value = document.querySelector('#search').value.replace(/\s+/g, '-').toLowerCase();
     console.log(value);
     location.href='#'+value;
   });
