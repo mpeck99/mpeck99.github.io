@@ -1,0 +1,34 @@
+//Search CSS
+.form-group{
+    width: 100%;
+    
+    display: flex;
+
+    input {
+        width: 90%;
+        height: 2.5rem;
+
+        padding: 1rem;
+
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        border: 0;
+    }
+
+    button {
+        width: 6rem;
+
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        border: 0;
+        background-color: $turquoise;
+
+        font-size: 1rem;
+        font-weight: 600;
+        color: $black;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

@@ -4,6 +4,11 @@
 {% block content %}
     <div class="content">
       <h1>Movies</h1>
+      <div class="form-group">
+        <label for="search" class="sr-only">Search my movies</label>
+        <input type="text" name="search" id="search" placeholder="Search for movie">
+        <button id="search-submit">Search</button>
+      </div>
       <p>This page is just something that I have been wanting to do for fun. I created a google spreadsheet full of the movies that I own and then used The Movie Database's API to pull information about that movie. This is a project that I have been wanting to work on for awhile so I hope you enjoy!</p>
       <div class="movie-wrapper">
         
