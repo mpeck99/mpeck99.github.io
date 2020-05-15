@@ -141,7 +141,7 @@ if(movieWrapper){
       loadMovies();
     }
     else {
-      let movie = movieArray.filter(x => x.title.toLowerCase() === searchvalue);
+      let movie = movieArray.filter(x => x.title.toLowerCase().replace(/'/g, "") === searchvalue.replace(/'/g,""));
             let overview ='';
             setTimeout(() => {
                 for(var i = 0; i <movie.length; i++){
