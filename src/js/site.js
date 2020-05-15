@@ -186,9 +186,9 @@ if(movieWrapper){
     personalSearch();
   });
 
-  // document.querySelector('.search-submit').addEventListener('touchevent', function(){
-  //   personalSearch();
-  // });
+  document.querySelector('.search-submit').addEventListener('touchevent', function(){
+    personalSearch();
+  });
   loadMovies();
 }
 
