@@ -136,7 +136,7 @@ if(movieWrapper){
   });
 
   function personalSearch(){
-    var searchvalue = document.querySelector('#search').value;
+    var searchvalue = document.querySelector('#search').value.toLowerCase();
     if(searchvalue.length == 0 || searchvalue == " "){
       loadMovies();
     }
