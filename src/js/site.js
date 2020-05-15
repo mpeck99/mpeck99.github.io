@@ -183,6 +183,7 @@ if(movieWrapper){
   })
 
   document.querySelector('.search-submit').addEventListener('click', function(){
+    alert('you clicked me');
     personalSearch();
   });
 
