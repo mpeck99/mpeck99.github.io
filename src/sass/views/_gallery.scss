@@ -1,3 +1,7 @@
+.content--movies {
+  position: relative;
+}
+
 .movie-wrapper {
   width: 100%;
 
@@ -171,5 +175,29 @@
 
   &:after {
     transform: rotate(60deg);
+  }
+}
+
+.back-to-top {
+  height: 3rem;
+  width: auto;
+
+  display: none;
+  position: fixed;
+  
+  left: 50%;
+  bottom: 1rem;
+
+  z-index: 10;
+
+  svg {
+    height: 3rem;
+    width: 3rem;
+
+    fill: rgba($teal, 0.9);
+  }
+
+  &.active {
+    display: block;
   }
 }
