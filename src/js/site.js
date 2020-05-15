@@ -79,47 +79,49 @@ if(document.querySelector('.hamburger-menu')){
 
   document.querySelector('.search-submit').addEventListener('click', function(){
     var searchvalue = document.querySelector('#search').value;
-    for(var x = 0; x < movieArray.length; x++){
-      if(searchvalue.toLowerCase() === movieArray[x].title.toLowerCase()){
-        const searchArray = [];
-        
-        const id = movieArray[x].id,
-              year = movieArray[x].year,
-              title = movieArray[x].title;
+    let movie = movieArray.filter(x => x.title.toLowerCase() === searchvalue);
+    console.log(movie);
+
+        const id = movie.id,
+              year = movie.year,
+              title = movie.title;
               let overview ='';
+              setTimeout(() => {
+                  for(var i = 0; i <movie.length; i++){
+                    const searchApi = 'https://api.themoviedb.org/3/movie/'+movie[i].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&primary_release_year='+movie[i].year+'&year='+movie[i].year+'&query='+movie[i].title.replace(/\s+/g, '-')+'&language=en-US';
 
-              searchArray.push({title: title, id: id, year: year});
+                    movieWrapper.innerHTML = '';
 
-              for(var i = 0; i <searchArray.length; i++){
-               const searchApi = 'https://api.themoviedb.org/3/movie/'+searchArray[i].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&primary_release_year='+searchArray[i].year+'&year='+searchArray[i].year+'&query='+searchArray[i].title+'&language=en-US';
-               fetch(searchApi).then(response=>{
-                response.json().then(json=>{
-                  const searchResult = json;
-                  // searchArray.push(searchResult);
-                  if(searchResult.overview.length >= 325){
-                    overview = searchResult.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+searchResult.id+'-'+searchResult.title+'" target="_blank" class="read-more" aria-label="Read more about'+searchResult.title+'">...read more</a>';
-                  }
-                  else {
-                      overview = searchResult.overview;
-                  }
-        
-                    const vote = (searchResult.vote_average)*10;
-                    const hours = Math.floor(searchResult.runtime / 60);
-                    const mins = searchResult.runtime % 60;
-                    const runtime = hours+'h '+mins+'m';
-                    // // movieWrapper.innerHTML = '';
-                    movieWrapper.innerHTML = '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+searchResult.poster_path+'\');"id='+searchResult.title.replace(/\s+/g, '-').toLowerCase()+'><div class="details"><h2>'+searchResult.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+searchResult.tagline+'</p><ul><li>'+searchResult.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+searchResult.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';sw
-                });
-              }); 
-              }
+                    fetch(searchApi).then(response=>{
+                     response.json().then(json=>{
+                       const searchResult = json;
+    
+                       if(searchResult.overview.length >= 325){
+                         overview = searchResult.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+searchResult.id+'-'+searchResult.title+'" target="_blank" class="read-more" aria-label="Read more about'+searchResult.title+'">...read more</a>';
+                       }
+                       else {
+                           overview = searchResult.overview;
+                       }
+             
+                         const vote = (searchResult.vote_average)*10;
+                         const hours = Math.floor(searchResult.runtime / 60);
+                         const mins = searchResult.runtime % 60;
+                         const runtime = hours+'h '+mins+'m';
+                         
+                         movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+searchResult.poster_path+'\');"id='+searchResult.title.replace(/\s+/g, '-').toLowerCase()+'><div class="details"><h2>'+searchResult.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+searchResult.tagline+'</p><ul><li>'+searchResult.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+searchResult.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+                     });
+                   }).catch(err => {
+                    console.error('we came across an error', err);
+                  })
+                   }
+                
+              }, 200);
+             
 
               
-      }
-    }
+      
+    
   });
-
-
-// searchSubmit();
 
 var movieArray = [];
 const movieWrapper = document.querySelector('.movie-wrapper');
@@ -151,7 +153,7 @@ if(movieWrapper){
 setTimeout(function(){
   
   for(var x=0; x<movieArray.length; x++){
-    const getUrl = 'https://api.themoviedb.org/3/movie/'+movieArray[x].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US'
+    const getUrl = 'https://api.themoviedb.org/3/movie/'+movieArray[x].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US';
     
     fetch(getUrl).then(response => {
       response.json().then(movie => {
