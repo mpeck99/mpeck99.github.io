@@ -142,9 +142,6 @@ if(movieWrapper){
     }
     else {
       let movie = movieArray.filter(x => x.title.toLowerCase() === searchvalue);
-      const id = movie.id,
-            year = movie.year,
-            title = movie.title;
             let overview ='';
             setTimeout(() => {
                 for(var i = 0; i <movie.length; i++){
