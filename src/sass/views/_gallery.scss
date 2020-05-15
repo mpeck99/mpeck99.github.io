@@ -26,14 +26,25 @@
   
   
   h2 {
+    max-width: 80%;
+
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+
     color: $black;
     font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    text-align: left;
   }
 
   img {
     width: 15.6rem;
     min-height: 21.6rem;
-  height: auto;
+    height: auto;
   }
 
   &:hover, &:focus {
@@ -42,11 +53,6 @@
     }
   }
 }
-
-.date {
-  margin-bottom: 0.25rem;
-  margin-top: 0;
- }
 
  .tagline {
   max-width: 75%;
@@ -57,9 +63,6 @@
   font-size: 0.9rem;
  }
 
- .genre {
-   font-size: 0.9rem;
- }
   .overview{
     font-size: 1rem;
   }
@@ -86,27 +89,48 @@
 
   z-index: 1;
   
-
-  p {
-    font-size: 0.9rem;
-    line-height: 1.25;
-    text-align: left;
-  }
-
-  h2 {
-    max-width: 80%;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
-  }
-
   &:hover, &:focus {
     display: block;
+  }
+
+  ul {
+    display: flex;
+
+    padding-left: 0;
+
+    list-style-type: none;
+
+    position: relative;
+
+    font-size: 0.8rem;
+    
+    li {
+      margin-right: 1rem;
+
+      &:nth-child(1), &:nth-child(2){
+        &:after {
+          content: '';
+
+          width: 0.3rem;
+          height: 0.3rem;
+          
+          position: absolute;
+
+          margin-top: 0.3rem;
+          margin-left: 0.3rem;
+
+          background-color: $navy;
+          border-radius: 50%;
+          
+        }
+      }
+    }
   }
 }
 
 .score {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 
   display: flex;
   justify-content: center; 
@@ -115,12 +139,37 @@
   margin-bottom: 1rem;;
 
   position: absolute;
-  top: 1rem;
-  right: 0.5rem;
+  top: 1.25rem;
+  right: 0.75rem;
 
-  border-radius: 50%;
   background-color: $navy;
-  color: $turquoise;
-  font-weight: 600;
-}
 
+  p {
+    color: $turquoise;
+    font-weight: 500;
+
+    z-index: 2;
+  }
+
+  &:before, &:after {
+    content: '';
+
+    height: 2rem;
+    width: 2rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    background: $navy;
+    z-index: 1;
+  }
+
+  &:before {
+    transform: rotate(30deg);
+  }
+
+  &:after {
+    transform: rotate(60deg);
+  }
+}
