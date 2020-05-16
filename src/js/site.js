@@ -109,7 +109,6 @@ function loadMovies(){
   },1000);
 }
 
-
 if(movieWrapper){
   const googleUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1nXRZYrOnedMOvioQJxbIQKTpc9_XCGI23-KMk8jwZQU/values/Movies!A:D?key=AIzaSyDrWhgTrY_NIQ7pa19SpdYtF0Wcom3stDA';
   fetch(googleUrl).then(response=>{
@@ -182,9 +181,7 @@ if(movieWrapper){
           if(!document.querySelector('.error').classList.contains('active')){
             movieWrapper.innerHTML = '';
             document.querySelector('.error').classList.add('active');
-            
           }
-          
         }  
     }
   }
