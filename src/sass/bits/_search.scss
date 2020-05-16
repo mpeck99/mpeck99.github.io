@@ -15,6 +15,8 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         border: 0;
+
+        font-size: 1rem;
     }
 
     button {
@@ -33,5 +35,37 @@
         &:hover {
             opacity: 0.9;
         }
+    }
+}
+
+.error {
+    display: none;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    border-radius: 0.4rem;
+    background-color: $turquoise;
+    color: $black;
+    
+
+    p {
+        margin: 0;
+        
+        text-align: center;
+    }
+
+    svg {
+        height: 1.75rem;
+        width: 1.75rem;
+        margin-right: 1rem;
+
+        fill: $black;
+    }
+
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

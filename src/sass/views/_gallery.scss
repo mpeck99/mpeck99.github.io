@@ -11,7 +11,7 @@
 }
 
 .card {
-  width: 17rem;
+  width: 18rem;
   height: 27rem;
 
   display: flex;
@@ -28,7 +28,6 @@
   background-position: center;
   border: 0.1rem solid $navy;
   
-  
   h2 {
     max-width: 80%;
 
@@ -43,12 +42,6 @@
     font-size: 0.9rem;
     line-height: 1.25;
     text-align: left;
-  }
-
-  img {
-    width: 15.6rem;
-    min-height: 21.6rem;
-    height: auto;
   }
 
   &:hover, &:focus {

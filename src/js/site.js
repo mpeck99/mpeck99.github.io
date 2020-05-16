@@ -137,41 +137,55 @@ if(movieWrapper){
 
   function personalSearch(){
     var searchvalue = document.querySelector('#search').value.toLowerCase();
+    if(document.querySelector('.error').classList.contains('active')){
+      document.querySelector('.error').classList.remove('active');
+    }
     if(searchvalue.length == 0 || searchvalue == " "){
       loadMovies();
-    }
+    } 
     else {
       let movie = movieArray.filter(x => x.title.toLowerCase().replace(/'/g, "") === searchvalue.replace(/'/g,""));
-            let overview ='';
-            setTimeout(() => {
-                for(var i = 0; i <movie.length; i++){
-                  const searchApi = 'https://api.themoviedb.org/3/movie/'+movie[i].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&primary_release_year='+movie[i].year+'&year='+movie[i].year+'&query='+movie[i].title.replace(/\s/g, '-')+'&language=en-US';
+        if(movie.length > 0){
+          let overview ='';
+          setTimeout(() => {
+              for(var i = 0; i <movie.length; i++){
+                const searchApi = 'https://api.themoviedb.org/3/movie/'+movie[i].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&primary_release_year='+movie[i].year+'&year='+movie[i].year+'&query='+movie[i].title.replace(/\s/g, '-')+'&language=en-US';
 
-                  movieWrapper.innerHTML = '';
+                movieWrapper.innerHTML = '';
 
-                  fetch(searchApi).then(response=>{
-                   response.json().then(json=>{
-                     const searchResult = json;
-  
-                     if(searchResult.overview.length >= 325){
-                       overview = searchResult.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+searchResult.id+'-'+searchResult.title+'" target="_blank" class="read-more" aria-label="Read more about'+searchResult.title+'">...read more</a>';
-                     }
-                     else {
-                         overview = searchResult.overview;
-                     }
-           
-                       const vote = (searchResult.vote_average)*10;
-                       const hours = Math.floor(searchResult.runtime / 60);
-                       const mins = searchResult.runtime % 60;
-                       const runtime = hours+'h '+mins+'m';
-                       
-                       movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+searchResult.poster_path+'\');"id='+searchResult.title.replace(/\s/g, '-').toLowerCase()+'><div class="details"><h2>'+searchResult.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+searchResult.tagline+'</p><ul><li>'+searchResult.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+searchResult.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
-                   });
-                 }).catch(err => {
-                  console.error('we came across an error', err);
-                })
-                 }
-            }, 200);
+                fetch(searchApi).then(response=>{
+                 response.json().then(json=>{
+                   const searchResult = json;
+
+                   if(searchResult.overview.length >= 325){
+                     overview = searchResult.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+searchResult.id+'-'+searchResult.title+'" target="_blank" class="read-more" aria-label="Read more about'+searchResult.title+'">...read more</a>';
+                   }
+                   else {
+                       overview = searchResult.overview;
+                   }
+         
+                     const vote = (searchResult.vote_average)*10;
+                     const hours = Math.floor(searchResult.runtime / 60);
+                     const mins = searchResult.runtime % 60;
+                     const runtime = hours+'h '+mins+'m';
+                     
+                     movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+searchResult.poster_path+'\');"id='+searchResult.title.replace(/\s/g, '-').toLowerCase()+'><div class="details"><h2>'+searchResult.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+searchResult.tagline+'</p><ul><li>'+searchResult.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+searchResult.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+                 });
+               }).catch(err => {
+                console.error('we came across an error', err);
+              })
+               }
+          }, 200);
+        }
+        else { 
+          movieWrapper.innerHTML = '';
+          if(!document.querySelector('.error').classList.contains('active')){
+            movieWrapper.innerHTML = '';
+            document.querySelector('.error').classList.add('active');
+            
+          }
+          
+        }  
     }
   }
 
