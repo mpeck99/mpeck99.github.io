@@ -28,28 +28,6 @@ if (document.querySelector('.main-nav')) {
   }
 }
 
-// ------------------------------------------------
-// Image zoom
-// ------------------------------------------------
-if (document.querySelector('.gallery-wrapper')) {
-  const img = document.querySelectorAll('.card-image');
-  img.forEach((singleImg) => {
-    singleImg.classList.remove('zoom');
-    singleImg.addEventListener('click', (event) => {
-      if (singleImg.classList.contains('zoom')) {
-        singleImg.classList.remove('zoom');
-      } else {
-        for (var i = 0; i < img.length; i++) {
-          if (img[i].classList.contains('zoom')) {
-            img[i].classList.remove('zoom');
-          }
-        }
-        singleImg.classList.add('zoom');
-      }
-    });
-  });
-}
-
 // Menu open / close 
 if(document.querySelector('.hamburger-menu')){
   const menu = document.querySelector('.hamburger-menu'),
@@ -84,9 +62,15 @@ function loadMovies(){
   setTimeout(function(){
     for(var x=0; x<movieArray.length; x++){
       const getUrl = 'https://api.themoviedb.org/3/movie/'+movieArray[x].id+'?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US';
+      const releaseDates = 'https://api.themoviedb.org/3/movie/'+movieArray[x].id+'/release_dates?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US';
       
       fetch(getUrl).then(response => {
         response.json().then(movie => {
+          fetch(releaseDates).then(res=> {
+            res.json().then(dates => {
+              var rating = dates.results.filter(i => i.iso_3166_1 === 'US');
+              for(var x = 0; x < rating.length; x++){
+      
           let overview ='';
           if(movie.overview.length >= 325){
             overview = movie.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="read-more" aria-label="Read more about'+movie.title+'">...read more</a>';
@@ -97,8 +81,23 @@ function loadMovies(){
           const vote = (movie.vote_average)*10;
           const hours = Math.floor(movie.runtime / 60);
           const mins = movie.runtime % 60;
+          const cert = '';
           const runtime = hours+'h '+mins+'m';
-          movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"id='+movie.title.replace(/\s/g, '-').toLowerCase()+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+          console.log(rating[x].release_dates[0].certification);
+          if(rating[x].release_dates[0].certification == ''  ){
+            cert = rating[x].release_dates[0].certification[0];
+          }
+          else if(rating[x].release_dates[0].certification[0] == ''){
+            cert = rating[x].release_dates[0].certification[1];
+          }
+          else  {
+            cert = rating[x].release_dates[0].certification;
+          }
+          movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"id='+movie.title.replace(/\s/g, '-').toLowerCase()+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+              }
+            })
+          });
+
         // break;                     
         }).catch(err => {
           console.error('we came across an error', err);
