@@ -69,6 +69,11 @@
     color: $black;
     font-size: 0.8rem;
     font-weight: 600;
+    
+    &:hover, &:focus{
+      color: $black;
+      opacity: 0.8;
+    }
   }
 
 .details {
@@ -193,4 +198,10 @@
   &.active {
     display: block;
   }
+}
+
+.disclaimer {
+  margin-top: 4rem;
+  margin-bottom: 0;
+ text-align: center;
 }

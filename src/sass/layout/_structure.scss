@@ -82,3 +82,15 @@ footer {
     width: 100%;
   }
 }
+
+a {
+  color: $turquoise;
+
+  &:visited {
+    color: $turquoise;
+  }
+
+  &:hover, &:focus {
+   opacity: 0.8;
+  }
+}
