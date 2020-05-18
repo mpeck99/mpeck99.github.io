@@ -205,6 +205,27 @@ if(movieWrapper){
     personalSearch();
   });
   loadMovies();
+
+  window.addEventListener('scroll', function(){
+    const top = document.querySelector('.back-top');
+    if(window.scrollY > 100){
+     
+      if(!top.classList.contains('active')){
+         top.classList.add('active');
+      }
+
+    }
+    if(window.scrollY === 0) {
+      top.classList.remove('active');
+    }
+  });
+  
+  document.querySelector('.back-top').addEventListener('click', function(){
+    if(document.querySelector('.back-top').classList.contains('active')){
+      document.querySelector('.back-top').classList.remove('active');
+    }
+  })
+  
 }
 
 
