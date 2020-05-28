@@ -154,9 +154,9 @@ if(movieWrapper){
                 const releaseDates = 'https://api.themoviedb.org/3/movie/'+movieArray[i].id+'/release_dates?api_key=e444034c3d7ef62e63059e6e8ac5b828&language=en-US';
                 movieWrapper.innerHTML = '';
 
-                fetch(searchApi).then(response => {
+                fetch(searchApi).then(response => 
                   response.json().then(movie => {
-                    fetch(releaseDates).then(res=> {
+                    fetch(releaseDates).then(res=> 
                       res.json().then(dates => {
                         var rating = dates.results.filter(i => i.iso_3166_1 === 'US');
                         for(var x = 0; x < rating.length; x++){
@@ -185,19 +185,16 @@ if(movieWrapper){
                         else{
                           cert = rating[x].release_dates[3].certification;
                         }
-                        // else  {
-                        //   cert = rating[x].release_dates[0].certification;
-                        // }
                         movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
                             }
                           })
-                    });                    
+                  )                    
                   }).catch(err => {
                     console.error('we came across an error', err);
                   })
-              });
+              )
                }
-          }, 200);
+          }, 0);
         }
         else { 
           movieWrapper.innerHTML = '';
