@@ -4,7 +4,7 @@
 // ======---------------------------------======
 // ---------------------------------------------
 .body-home {
-  background-image: linear-gradient(rgba($navy, 0.95), rgba($teal, 0.85)), url('../images/home-background.jpg');
+  background-image: linear-gradient(rgba($navy, 1), rgba($turquoise, 0.75)), url('../images/home-background.jpg');
   background-size: cover;
   background-position: center;
 
@@ -28,6 +28,8 @@
 
   font-family: $secondary;
 
+  
+
   h1 {
     margin-bottom: 0;
 
@@ -35,6 +37,7 @@
     color: $navy;
 
     letter-spacing: 0.25rem;
+    line-height: 2;
 
     @include tablet {
       font-size: 5rem;
