@@ -18,6 +18,8 @@
     border: 0;
 
     &:hover, &:focus {
+      color: $coral;
+      
       cursor: pointer;
     }
   }

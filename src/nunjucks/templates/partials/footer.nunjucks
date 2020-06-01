@@ -3,7 +3,7 @@
   {% if(page =='home') %}
   <ul class="social-media-list">
   {% else %}
-  <ul class="social-media-list social-media-list__turq">
+  <ul class="social-media-list social-media-list__coral">
   {% endif %}
     <li><a href="https://www.linkedin.com/in/morganpeck99/" target='_blank'>{% include 'svg/icn-linkedin.nj' %}</a></li>
     <li><a href="https://github.com/mpeck99" target='_blank'>{% include 'svg/icn-git.nj' %}</a></li>

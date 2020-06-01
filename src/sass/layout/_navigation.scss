@@ -4,8 +4,6 @@
 // ======---------------------------------======
 // ---------------------------------------------
 .main-nav {
-  // height: 4rem;
-
   display: none;
 
   font-family: $main;
@@ -25,7 +23,7 @@
     }
 
     &.active {
-      border-bottom: 0.25rem solid $turquoise;
+      border-bottom: 0.25rem solid $coral;
     }
   }
 
@@ -38,7 +36,7 @@
 
       list-style: none;
 
-      &:hover {
+      &:hover, &:focus{
         transform: translateY(0.5rem);
         transition: 0.5s ease;
       }
@@ -75,7 +73,7 @@
     }
     a {
       color: $navy;
-      border-bottom-color: $navy;
+      border-bottom-color: $coral;
     }
   }
 
@@ -103,9 +101,43 @@
     margin-bottom: 0.5rem;
 
     display: block;
+    position: relative;
 
     background-color: $turquoise;
 
+    &:after {
+      content: '';
+
+      width: 0;
+      height: inherit;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      background-color: $coral;
+    }
+
+  }
+
+  &:hover, &:focus {
+    span{
+      &:after {
+        width: 100%;
+        transition: 0.2s; 
+      }
+      &:nth-of-type(2){
+        &:after {
+         transition-delay: 0.1s; 
+        } 
+      }
+
+      &:nth-of-type(3){
+        &:after {
+         transition-delay: 0.2s; 
+        }
+      }
+    }
   }
 
   &.js-open {
