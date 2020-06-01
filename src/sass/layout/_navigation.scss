@@ -121,6 +121,35 @@
   }
 
   &:hover, &:focus {
+    &.js-open {
+      span{
+        &:after {
+          width: 100%;
+          transition: 0.2s; 
+        }
+        &:nth-of-type(2){
+          &:after {
+           transition-delay: 0.1s; 
+          } 
+        }
+  
+        &:nth-of-type(3){
+          &:after {
+           transition-delay: 0.2s; 
+          }
+        }
+      }
+    }
+
+    &.js-close {
+      span {
+        &:after {
+          width: 0;
+
+          background-color: $navy;
+        }
+      }
+    }
     span{
       &:after {
         width: 100%;
@@ -158,6 +187,7 @@
         transform: rotate(-45deg) translate(9px, -9px);
         transition: ease-in 0.2s;
       }
+
     }
   }
 
