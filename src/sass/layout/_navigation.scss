@@ -177,6 +177,11 @@
         transform: rotate(0deg);
         transition: ease-in 0.2s;
       }
+
+      &:after {
+        width: 0;
+      }
+
     }
   }
 
