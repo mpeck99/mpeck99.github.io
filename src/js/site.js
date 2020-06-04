@@ -95,9 +95,6 @@ function loadMovies(){
               else{
                 cert = rating[x].release_dates[3].certification;
               }
-              // else  {
-              //   cert = rating[x].release_dates[0].certification;
-              // }
               movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
                   }
                 })
@@ -114,6 +111,7 @@ function loadMovies(){
 if(movieWrapper){
   const googleUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1nXRZYrOnedMOvioQJxbIQKTpc9_XCGI23-KMk8jwZQU/values/Movies!A:D?key=AIzaSyDrWhgTrY_NIQ7pa19SpdYtF0Wcom3stDA';
   fetch(googleUrl).then(response=>{
+  
       response.json().then(json =>{
           const movies = json;
           for(var i = 0; i < movies.values.length; i++){
@@ -194,7 +192,7 @@ if(movieWrapper){
                   })
               )
                }
-          }, 0);
+          }, 100);
         }
         else { 
           movieWrapper.innerHTML = '';
