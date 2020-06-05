@@ -83,20 +83,19 @@ function loadMovies(){
               const cert = '';
               const runtime = hours+'h '+mins+'m';
            
-              if(rating[x].release_dates[0].certification != "" || rating[x].release_dates[0].certification != 'undenfined'){
+              if(rating[x].release_dates[0].certification != "" && rating[x].release_dates[0].certification != 'undefined'){
                 cert = rating[x].release_dates[0].certification;
-
               }
-              else if(rating[x].release_dates[1].certification != "" || rating[x].release_dates[1].certification != 'undenfined'){
+              else if(rating[x].release_dates[1].certification != "" && rating[x].release_dates[1].certification != 'undefined'){
                 cert = rating[x].release_dates[1].certification;
               }
-              else if(rating[x].release_dates[2].certification !="" || rating[x].release_dates[2].certification != 'undenfined'){
+              else if(rating[x].release_dates[2].certification !="" && rating[x].release_dates[2].certification != 'undefined'){
                 cert = rating[x].release_dates[2].certification;
               }
-              else{
+              else if(rating[x].release_dates[3].certification !="" && rating[x].release_dates[3].certification != 'undefined'){
                 cert = rating[x].release_dates[3].certification;
               }
-
+            
               if(movie.genres[0].name === 'Science Fiction'){
                 movie.genres[0].name = 'Sci-Fi';
               }
@@ -177,18 +176,20 @@ if(movieWrapper){
                         const cert = '';
                         const runtime = hours+'h '+mins+'m';
                      
-                        if(rating[x].release_dates[0].certification != "" || rating[x].release_dates[0].certification != 'undenfined'){
+                        if(rating[x].release_dates[0].certification != ""){
                           cert = rating[x].release_dates[0].certification;
-
                         }
-                        else if(rating[x].release_dates[1].certification != "" || rating[x].release_dates[1].certification != 'undenfined'){
+                        else if(rating[x].release_dates[1].certification != ""){
                           cert = rating[x].release_dates[1].certification;
                         }
-                        else if(rating[x].release_dates[2].certification !="" || rating[x].release_dates[2].certification != 'undenfined'){
+                        else if(rating[x].release_dates[2].certification !=""){
                           cert = rating[x].release_dates[2].certification;
                         }
-                        else{
+                        else if(rating[x].release_dates[3].certification !=""){
                           cert = rating[x].release_dates[3].certification;
+                        }
+                        else  {
+                          cert = 'N/A'
                         }
 
                         if(movie.genres[0].name === 'Science Fiction'){
