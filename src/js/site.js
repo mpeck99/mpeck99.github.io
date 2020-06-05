@@ -98,7 +98,7 @@ function loadMovies(){
               }
 
               if(movie.genres[0].name === 'Science Fiction'){
-                movie.genres[0].name = 'Sci-Fi'
+                movie.genres[0].name = 'Sci-Fi';
               }
 
               movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
@@ -192,7 +192,7 @@ if(movieWrapper){
                         }
 
                         if(movie.genres[0].name === 'Science Fiction'){
-                          movie.genres[0].name = 'Sci-Fi'
+                          movie.genres[0].name = 'Sci-Fi';
                         }
 
                         movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
