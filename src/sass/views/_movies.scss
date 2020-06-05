@@ -10,6 +10,28 @@
   justify-content: center;
 }
 
+:root {
+  --star-color: #45a29e;
+  --star-background: #ff6978;
+}
+
+.Stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1;
+  
+  &::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+
 .card {
   width: 18rem;
   height: 27rem;
