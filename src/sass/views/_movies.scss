@@ -8,6 +8,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+
+  margin-top: 20px;
 }
 
 :root {
@@ -15,16 +17,22 @@
   --star-background: #ff6978;
 }
 
-.Stars {
+.stars {
   --percent: calc(var(--rating) / 5 * 100%);
 
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
+
+  span {
+    font-size: 12px;
+
+    margin: auto 0;
+  }
   
   &::before {
     content: '★★★★★';
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -33,7 +41,7 @@
 
 
 .card {
-  width: 18rem;
+  width: 17.9rem;
   height: 27rem;
 
   display: flex;
