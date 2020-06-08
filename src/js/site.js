@@ -72,7 +72,7 @@ function loadMovies(){
               for(var x = 0; x < rating.length; x++){
               let overview ='';
               if(movie.overview.length >= 325){
-                overview = movie.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="read-more" aria-label="Read more about'+movie.title+'">...read more</a>';
+                overview = movie.overview.substring(0,325)+'<a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="btn-link" aria-label="Read more about'+movie.title+'">...read more</a>';
               }
               else {
                   overview = movie.overview;
@@ -83,16 +83,16 @@ function loadMovies(){
               const cert = '';
               const runtime = hours+'h '+mins+'m';
            
-              if(rating[x].release_dates[0].certification != "" && rating[x].release_dates[0].certification != 'undefined'){
+              if(rating[x].release_dates[0].certification != ""){
                 cert = rating[x].release_dates[0].certification;
               }
-              else if(rating[x].release_dates[1].certification != "" && rating[x].release_dates[1].certification != 'undefined'){
+              else if(rating[x].release_dates[1].certification != ""){
                 cert = rating[x].release_dates[1].certification;
               }
-              else if(rating[x].release_dates[2].certification !="" && rating[x].release_dates[2].certification != 'undefined'){
+              else if(rating[x].release_dates[2].certification !=""){
                 cert = rating[x].release_dates[2].certification;
               }
-              else if(rating[x].release_dates[3].certification !="" && rating[x].release_dates[3].certification != 'undefined'){
+              else if(rating[x].release_dates[3].certification !=""){
                 cert = rating[x].release_dates[3].certification;
               }
 
@@ -100,7 +100,7 @@ function loadMovies(){
                 movie.genres[0].name = 'Sci-Fi';
               }
 
-              movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><p class="tagline">'+movie.tagline+'</p><div class="stars" style="--rating:'+vote+';" aria-label="Rating of this product is '+vote+' out of 5."><span>'+vote+'</span></div><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+              movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><p class="tagline">'+movie.tagline+'</p><div class="stars" style="--rating:'+vote+';" aria-label="Rating of this product is '+vote+' out of 5."><span>'+vote+'</span></div><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="btn-link right-corner" aria-label="Read more about'+movie.title+'">Find out more</a></div></div>';
                   }
                 });
           });                    
@@ -196,7 +196,7 @@ if(movieWrapper){
                           movie.genres[0].name = 'Sci-Fi';
                         }
 
-                        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><p class="tagline">'+movie.tagline+'</p><div class="stars" style="--rating:'+vote+';" aria-label="Rating of this product is '+vote+' out of 5."><span>'+vote+'</span></div><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+                        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><p class="tagline">'+movie.tagline+'</p><div class="stars" style="--rating:'+vote+';" aria-label="Rating of this product is '+vote+' out of 5."><span>'+vote+'</span></div><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p><a href="https://www.themoviedb.org/movie/'+movie.id+'-'+movie.title+'" target="_blank" class="btn-link right-corner" aria-label="Read more about'+movie.title+'">Find out more</a></div></div>';
                             }
                           })
                   )                    
