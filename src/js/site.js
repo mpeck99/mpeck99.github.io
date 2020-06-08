@@ -170,7 +170,7 @@ if(movieWrapper){
                         else {
                             overview = movie.overview;
                         }
-                        const vote = (movie.vote_average)*10;
+                        const vote = ((movie.vote_average)/10 * 5).toFixed(1);
                         const hours = Math.floor(movie.runtime / 60);
                         const mins = movie.runtime % 60;
                         const cert = '';
@@ -196,7 +196,7 @@ if(movieWrapper){
                           movie.genres[0].name = 'Sci-Fi';
                         }
 
-                        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><span class="score"><p>'+vote+'%</p></span><p class="tagline">'+movie.tagline+'</p><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
+                        movieWrapper.innerHTML += '<div class="card" onclick="this.focus()" style="background-image: url(\'https://image.tmdb.org/t/p/original/'+movie.poster_path+'\');"'+movie.id+'><div class="details"><h2>'+movie.title+'</h2><p class="tagline">'+movie.tagline+'</p><div class="stars" style="--rating:'+vote+';" aria-label="Rating of this product is '+vote+' out of 5."><span>'+vote+'</span></div><ul><li>'+cert+'</li><li>'+movie.release_date.split('-')[0]+'</li><li>'+runtime+'</li><li>'+movie.genres[0].name+'</li></ul><p class="overview">'+overview+'</p></div></div>';
                             }
                           })
                   )                    
