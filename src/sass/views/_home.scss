@@ -26,7 +26,7 @@
 
   flex: 1 0 100%;
 
-  font-family: $secondary;
+  font-family: $main;
 
   
 
@@ -51,7 +51,7 @@
     text-align: center;
     font-weight: 400;
     font-size: 1.5rem;
-    font-family: $main;
+    font-family: $secondary;
     color: $navy;
 
     @include tablet {
