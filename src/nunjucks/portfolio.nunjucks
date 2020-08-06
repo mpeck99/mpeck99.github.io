@@ -1,5 +1,5 @@
 {% extends 'layout.nunjucks' %}
-{% set page = 'portfolio' %}
+{% set page = 'Portfolio' %}
 
 {% block content %}
     <div class="content">

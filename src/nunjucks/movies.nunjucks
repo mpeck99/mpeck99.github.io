@@ -1,5 +1,5 @@
 {% extends 'layout.nunjucks' %}
-{% set page = 'gallery' %}
+{% set page = 'Movies' %}
 
 {% block content %}
     <div class="content content--movies">
