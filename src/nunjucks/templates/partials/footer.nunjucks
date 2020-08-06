@@ -1,6 +1,6 @@
 <footer class="footer">
   <p>@2020 Morgan Peck</p>
-  {% if(page =='home') %}
+  {% if(page =='Home') %}
   <ul class="social-media-list">
   {% else %}
   <ul class="social-media-list social-media-list__coral">

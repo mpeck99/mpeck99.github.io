@@ -4,9 +4,9 @@
 <head>
   {% include "partials/head.nunjucks" %}
 </head>
-{% if (page == 'home') %}
+{% if (page == 'Home') %}
   {% set bodyclass ="body-home" %}
-{% elif (page !='home') %}
+{% elif (page !='Home') %}
   {% set bodyclass ="body-subpage" %}
 {% endif %}
 <body class={{bodyclass}}>
