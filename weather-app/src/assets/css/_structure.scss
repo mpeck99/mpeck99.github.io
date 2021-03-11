@@ -1,0 +1,67 @@
+  @import 'variables';
+
+* {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+    padding: 0;
+    margin: 0;
+
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    color: $white;
+    
+    background: $greyd; 
+  }
+
+  #app {
+    min-height: 100%;
+    width: 90%;
+
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    height: 100%;
+    width: 100%;
+
+    display: flex; 
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 1rem;
+
+    a {
+      color: $white;
+
+      &:visited {
+        color: $white;
+      }
+
+      &:hover, &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .sr-only {
+    position: absolute ;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+  }
