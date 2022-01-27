@@ -4,13 +4,23 @@
 {% block content %}
     <div class="content">
       <h1>Portfolio</h1>
-      <p>This page is a place where I want to showcase some of my HTML, CSS, & JS skills. Along with some examples shown below this site is something that has been completly designed and built by me. </p>
-      <p>This page is a work in progress, so more is to come!</p>
-      <p class="codepen" data-height="400" data-theme-id="37610" data-default-tab="html,result" data-user="mpeck9" data-slug-hash="ZEberEX" data-preview="true" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Chatbox">
-        <span>See the Pen <a href="https://codepen.io/mpeck9/pen/ZEberEX">
-        Chatbox</a> by Morgan Peck (<a href="https://codepen.io/mpeck9">@mpeck9</a>)
-        on <a href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+      <article class="project">
+        <h2>Vue chat app</h2>
+        <ul>
+          <li><img src="/assets/images/chat-1.png" alt="Vue chat app landing page"></li>
+          <li><img src="/assets/images/chat-client.png" alt="Vue chat app client view"></li>
+          <li><img src="/assets/images/chat-agent.png" alt="Vue chat app agent view"></li>
+        </ul>
+        <p>A personal chat app built using Vue, Socket.IO, HTML, CSS. How it works is that a user must enter their name and a user type (agent or client). Depending on what they pick they will be taken a specific view. If they are a user they will see a chat box pop up with a message that they are in the queue to speak with a representative. If they choose agent they will be taken to a window with a chatbox and a list of all connected clients. An agent can create a private message with any client that is on the list. This was a fun project to help me learn more and really work on using Vue compoents as well as integrating something new, Socket.IO. I have never had the opportunity to mess with websockets so I found it challenging, but in a good way! I am hosting it via Heroku and it can be found at <a href="https://chat.morganpeck.com" title="Vue Chat App" target="_blank">chat.morganpeck.com</a>. You can also view the source code at its <a href="https://github.com/mpeck99/chat-app" target="_blank" title="Chat app repo">repo</a>.</p>
+      </article>
+      <article class="project">
+        <h2>Vue weather app</h2>
+        <ul>
+          <li><img src="/assets/images/weather-1.png" alt="Vue weather app landing view"></li>
+          <li><img src="/assets/images/weather-3.png" alt="Vue weather alerts"></li>
+          <li><img src="/assets/images/weather-2.png" alt="Vue weather data"></li>
+        </ul>
+        <p>I built this site using Vue and the <a href="https://openweathermap.org/api" target="_blank">OpenWeather Map API</a>. This project was something that I have been wanting create from a project I did while in College. It was my first real attempt at using Vue and helped me learn alot on how to structure components and refreshed me on pulling data from API's. Overall this project was really fun. Check it out at <a href="http://weather.morganpeck.com" target="_blank" title="Vue weather app">weather.morganpeck.com</a> and its <a href="https://github.com/mpeck99/weather-app" target="_blank" title="Weather App Github">repo is located here</a>.</p>
+      </article>
     </div>  
 {% endblock %}
