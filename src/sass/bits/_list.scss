@@ -16,11 +16,16 @@
   li { 
     margin: 0 1rem;
     &:hover,&:focus {
-      transform: scale(1.25);
-      opacity: 0.7;
+      transform: scale(1.5);
     }
     a {
       fill: $navy;
+
+      .icn {
+        &:hover, &focus {
+          fill: $coral;
+        }
+      }
 
       &:visited {
         fill: $navy;
@@ -33,7 +38,13 @@
   li {
       a {
       fill: $coral;
-
+      
+      .icn {
+        &:hover, &:focus {
+          fill: $teal;
+        }
+      }
+      
       &:visited {
         fill: $coral;
       }
