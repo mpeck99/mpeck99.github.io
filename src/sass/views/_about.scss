@@ -3,15 +3,14 @@
 // About
 // ======---------------------------------======
 // ---------------------------------------------
-.intro {
-  max-width: 30rem;
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  margin: 0;
-
-  p {
-    &:nth-of-type(1){
-      font-size: 1.5rem;
-    }
+  @include desktop {
+    flex-direction: row;
   }
 }
 
