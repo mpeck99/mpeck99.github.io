@@ -85,11 +85,14 @@ footer {
 a {
   color: $turquoise;
 
+  text-decoration: underline;
+
   &:visited {
     color: $turquoise;
   }
 
   &:hover, &:focus {
    opacity: 0.8;
+   color: $coral;
   }
 }
