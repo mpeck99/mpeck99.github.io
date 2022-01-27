@@ -6,9 +6,9 @@
 <meta name="description" content="Morgan Peck, Frontend Web Developer. I love building responsive user friendly websites for people to use and love. Skills include HTML, JavaScript, CSS, Gulp, SASS. "/>
 <meta name="theme-color" content="#45a29e" />
 <title>Morgan Peck - {{page}}</title>
-<link rel="stylesheet" href="./assets/css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Montserrat:400,500,700&display=swap" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Montserrat:400,500,700&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="./assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
