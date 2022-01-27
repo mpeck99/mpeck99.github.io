@@ -23,6 +23,19 @@
   overflow: hidden;
 }
 
+.headshot {
+  height: auto;
+  width: 15rem;
+
+  border-radius: 50%;
+  border: 0.5rem $coral solid;
+
+  margin: 2rem 2rem 2rem 0;
+
+  @include desktop {
+    width: 20rem;
+  }
+}
 
 .skills-list {
   width: 100%;
