@@ -1,13 +1,15 @@
 <footer class="footer">
-  <p>@2020 Morgan Peck</p>
+  <p>@2022 Morgan Peck</p>
   {% if(page =='Home') %}
   <ul class="social-media-list">
   {% else %}
   <ul class="social-media-list social-media-list__coral">
   {% endif %}
-    <li><a href="https://www.linkedin.com/in/morganpeck99/" target='_blank'>{% include 'svg/icn-linkedin.nj' %}</a></li>
+    <li><a href="https://www.linkedin.com/in/morganlpeck/" target='_blank'>{% include 'svg/icn-linkedin.nj' %}</a></li>
     <li><a href="https://github.com/mpeck99" target='_blank'>{% include 'svg/icn-git.nj' %}</a></li>
-    <li><a href="mailto:mopeck99@gmail.com?subject=Portfolio" >{% include 'svg/icn-email.nj' %}</a></li>
+    <li><a href="mailto:info@morganpeck.com">{% include 'svg/icn-email.nj' %}</a></li>
   </ul>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="./assets/js/site.min.js"></script>
 </footer>

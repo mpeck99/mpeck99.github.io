@@ -93,7 +93,7 @@ gulp.task('sass', cb => {
   );
 });
 
-gulp.task('bootstrapsass', () => {
+gulp.task('bootstrapsass', (cb) => {
   pump([
     gulp.src('node_modules/bootstrap/scss/bootstrap.scss'),
     sourcemaps.init(),
@@ -108,6 +108,7 @@ gulp.task('bootstrapsass', () => {
     sourcemaps.write('./maps'),
     gulp.dest('assets/css')
   ]);
+  cb()
 });
 
 
