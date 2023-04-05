@@ -4,6 +4,6 @@
 {% block content %}
     <div class="content content-home">
       <h1>Morgan Peck</h1>
-      <p>Front-End Developer</p>
+      <p>UX Engineer</p>
     </div>  
 {% endblock %}

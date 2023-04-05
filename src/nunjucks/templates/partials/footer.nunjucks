@@ -1,5 +1,5 @@
 <footer class="footer">
-  <p>@2022 Morgan Peck</p>
+  <p>@2023 Morgan Peck</p>
   {% if(page =='Home') %}
   <ul class="social-media-list">
   {% else %}
